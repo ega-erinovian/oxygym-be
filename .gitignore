@@ -1,0 +1,10 @@
+node_modules
+# Keep environment variables out of version control
+.env
+dist
+
+/generated/prisma
+docker
+docker-compose.yaml
+
+SETUP_FROM_SCRATCH.md
