@@ -4,7 +4,7 @@ import prisma from '../lib/prisma';
 
 export const registerService = async (body: User) => {
   try {
-    const { email, password, name } = body;
+    const { email, password } = body;
 
     const existingUser = await prisma.user.findUnique({
       where: {
