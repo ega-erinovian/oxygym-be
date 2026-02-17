@@ -4,6 +4,7 @@ import { JWT_SECRET, JWT_EXPIRES_IN } from "../config";
 export interface TokenPayload {
   userId: number;
   email: string;
+  name: string;
 }
 
 export const generateToken = (payload: TokenPayload): string => {
