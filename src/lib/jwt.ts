@@ -2,9 +2,12 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET, JWT_EXPIRES_IN } from "../config";
 
 export interface TokenPayload {
-  userId: number;
+  id: string;
   email: string;
-  name: string;
+  username: string;
+  fullname: string;
+  identityNumber: string;
+  role: string;
 }
 
 export const generateToken = (payload: TokenPayload): string => {
