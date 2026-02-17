@@ -3,8 +3,9 @@ node_modules
 .env
 dist
 
-/generated/prisma
+/prisma/generated
 docker
 docker-compose.yaml
 
 SETUP_FROM_SCRATCH.md
+.prettierrc
