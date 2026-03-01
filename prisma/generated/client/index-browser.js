@@ -126,13 +126,58 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   password: 'password',
   username: 'username',
-  fullname: 'fullname',
-  address: 'address',
-  phoneNumber: 'phoneNumber',
-  identityNumber: 'identityNumber',
   role: 'role',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.MemberScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  full_name: 'full_name',
+  phone_number: 'phone_number',
+  address: 'address',
+  gender: 'gender',
+  join_date: 'join_date',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Membership_PlanScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  duration_days: 'duration_days',
+  price: 'price',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.SubscriptionScalarFieldEnum = {
+  id: 'id',
+  member_id: 'member_id',
+  plan_id: 'plan_id',
+  start_date: 'start_date',
+  end_date: 'end_date',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.PaymentScalarFieldEnum = {
+  id: 'id',
+  subscription_id: 'subscription_id',
+  amount_paid: 'amount_paid',
+  payment_method: 'payment_method',
+  payment_date: 'payment_date',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.AttendanceScalarFieldEnum = {
+  id: 'id',
+  member_id: 'member_id',
+  check_in_time: 'check_in_time'
 };
 
 exports.Prisma.SortOrder = {
@@ -144,18 +189,40 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
 exports.Role = exports.$Enums.Role = {
   USER: 'USER',
   ADMIN: 'ADMIN'
 };
 
+exports.Gender = exports.$Enums.Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE'
+};
+
+exports.Status = exports.$Enums.Status = {
+  ACTIVE: 'ACTIVE',
+  EXPIRED: 'EXPIRED',
+  PENDING: 'PENDING'
+};
+
+exports.Payment_Method = exports.$Enums.Payment_Method = {
+  CASH: 'CASH',
+  TRANSFER: 'TRANSFER',
+  QRIS: 'QRIS'
+};
+
+exports.Payment_Status = exports.$Enums.Payment_Status = {
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED'
+};
+
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Member: 'Member',
+  Membership_Plan: 'Membership_Plan',
+  Subscription: 'Subscription',
+  Payment: 'Payment',
+  Attendance: 'Attendance'
 };
 
 /**

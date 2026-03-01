@@ -5,8 +5,6 @@ export interface TokenPayload {
   id: string;
   email: string;
   username: string;
-  fullname: string;
-  identityNumber: string;
   role: string;
 }
 

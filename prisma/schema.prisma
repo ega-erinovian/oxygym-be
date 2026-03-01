@@ -13,18 +13,15 @@ datasource db {
 }
 
 model User {
-  id             String  @id @default(uuid())
-  email          String  @unique
-  password       String
-  username       String
-  fullname       String?
-  address        String?
-  phoneNumber    String?
-  identityNumber String  @unique
-  role           Role    @default(USER)
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+  username String
+  role     Role
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  member    Member?
 
   @@map("users")
 }
@@ -32,4 +29,96 @@ model User {
 enum Role {
   USER
   ADMIN
+}
+
+model Member {
+  id           String   @id @default(uuid())
+  user_id      String   @unique
+  full_name    String
+  phone_number String
+  address      String
+  gender       Gender
+  join_date    DateTime @default(now())
+
+  user          User           @relation(fields: [user_id], references: [id])
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+  attendances   Attendance[]
+
+  @@map("members")
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+model Membership_Plan {
+  id            String @id @default(uuid())
+  name          String
+  duration_days Int
+  price         Int
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+
+  @@map("membership_plans")
+}
+
+model Subscription {
+  id         String   @id @default(uuid())
+  member_id  String
+  plan_id    String
+  start_date DateTime @default(now())
+  end_date   DateTime
+  status     Status
+
+  member    Member          @relation(fields: [member_id], references: [id])
+  plan      Membership_Plan @relation(fields: [plan_id], references: [id])
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@map("subscriptions")
+}
+
+enum Status {
+  ACTIVE
+  EXPIRED
+  PENDING
+}
+
+model Payment {
+  id              String         @id @default(uuid())
+  subscription_id String
+  amount_paid     Int
+  payment_method  Payment_Method
+  payment_date    DateTime       @default(now())
+  status          Payment_Status
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("payments")
+}
+
+enum Payment_Status {
+  SUCCESS
+  FAILED
+}
+
+enum Payment_Method {
+  CASH
+  TRANSFER
+  QRIS
+}
+
+model Attendance {
+  id            String   @id @default(uuid())
+  member_id     String
+  check_in_time DateTime @default(now())
+  member        Member   @relation(fields: [member_id], references: [id])
+
+  @@map("attendances")
 }
