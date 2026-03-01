@@ -143,7 +143,7 @@ exports.Prisma.MemberScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.Membership_PlanScalarFieldEnum = {
+exports.Prisma.MembershipPlanScalarFieldEnum = {
   id: 'id',
   name: 'name',
   duration_days: 'duration_days',
@@ -205,13 +205,13 @@ exports.Status = exports.$Enums.Status = {
   PENDING: 'PENDING'
 };
 
-exports.Payment_Method = exports.$Enums.Payment_Method = {
+exports.PaymentMethod = exports.$Enums.PaymentMethod = {
   CASH: 'CASH',
   TRANSFER: 'TRANSFER',
   QRIS: 'QRIS'
 };
 
-exports.Payment_Status = exports.$Enums.Payment_Status = {
+exports.PaymentStatus = exports.$Enums.PaymentStatus = {
   SUCCESS: 'SUCCESS',
   FAILED: 'FAILED'
 };
@@ -219,7 +219,7 @@ exports.Payment_Status = exports.$Enums.Payment_Status = {
 exports.Prisma.ModelName = {
   User: 'User',
   Member: 'Member',
-  Membership_Plan: 'Membership_Plan',
+  MembershipPlan: 'MembershipPlan',
   Subscription: 'Subscription',
   Payment: 'Payment',
   Attendance: 'Attendance'

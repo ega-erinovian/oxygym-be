@@ -1,7 +1,7 @@
 import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
-import { authMiddleware } from "./middlewares/auth.middleware";
-import authRouter from './routes/auth.routes'
+import authRouter from './routes/auth.routes';
+import membershipPlanRouter from './routes/membershipPlan.routes';
 
 const app = express();
 
@@ -10,6 +10,7 @@ app.use(express.json());
 
 // routes
 app.use("/", authRouter);
+app.use("/membership-plan", membershipPlanRouter);
 
 // middleware error
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

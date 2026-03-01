@@ -54,7 +54,7 @@ enum Gender {
   FEMALE
 }
 
-model Membership_Plan {
+model MembershipPlan {
   id            String @id @default(uuid())
   name          String
   duration_days Int
@@ -75,10 +75,10 @@ model Subscription {
   end_date   DateTime
   status     Status
 
-  member    Member          @relation(fields: [member_id], references: [id])
-  plan      Membership_Plan @relation(fields: [plan_id], references: [id])
-  createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt
+  member    Member         @relation(fields: [member_id], references: [id])
+  plan      MembershipPlan @relation(fields: [plan_id], references: [id])
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
 
   @@map("subscriptions")
 }
@@ -90,12 +90,12 @@ enum Status {
 }
 
 model Payment {
-  id              String         @id @default(uuid())
+  id              String        @id @default(uuid())
   subscription_id String
   amount_paid     Int
-  payment_method  Payment_Method
-  payment_date    DateTime       @default(now())
-  status          Payment_Status
+  payment_method  PaymentMethod
+  payment_date    DateTime      @default(now())
+  status          PaymentStatus
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -103,15 +103,19 @@ model Payment {
   @@map("payments")
 }
 
-enum Payment_Status {
+enum PaymentStatus {
   SUCCESS
   FAILED
+
+  @@map("Payment_Status")
 }
 
-enum Payment_Method {
+enum PaymentMethod {
   CASH
   TRANSFER
   QRIS
+
+  @@map("Payment_Method")
 }
 
 model Attendance {
