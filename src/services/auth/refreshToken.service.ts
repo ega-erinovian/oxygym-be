@@ -16,8 +16,6 @@ export const refreshTokenService = async (userId: string) => {
       id: user.id,
       email: user.email,
       username: user.username,
-      fullname: user.fullname || '',
-      identityNumber: user.identityNumber,
       role: user.role as Role,
     });
 
