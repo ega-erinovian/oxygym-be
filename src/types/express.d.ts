@@ -1,9 +1,9 @@
-import { TokenPayload } from "../lib/jwt";
+import { Request } from "express";
 
 declare global {
   namespace Express {
     interface Request {
-      user?: TokenPayload;
+      user?: any;
     }
   }
 }

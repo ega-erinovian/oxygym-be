@@ -1,6 +1,6 @@
-import { User } from '../../prisma/generated/client';
-import { hashPassword } from '../lib/bcrypt';
-import prisma from '../lib/prisma';
+import { User } from '../../../prisma/generated/client';
+import { hashPassword } from '../../lib/bcrypt';
+import prisma from '../../lib/prisma';
 
 export const registerService = async (body: User) => {
   try {

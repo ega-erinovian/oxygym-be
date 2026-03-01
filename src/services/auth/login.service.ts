@@ -1,7 +1,7 @@
-import { Role, User } from '../../prisma/generated/client';
-import { comparePassword } from '../lib/bcrypt';
-import { generateToken } from '../lib/jwt';
-import prisma from '../lib/prisma';
+import { Role, User } from '../../../prisma/generated/client';
+import { comparePassword } from '../../lib/bcrypt';
+import { generateToken } from '../../lib/jwt';
+import prisma from '../../lib/prisma';
 
 export const loginService = async (body: User) => {
   try {
@@ -14,7 +14,7 @@ export const loginService = async (body: User) => {
     });
 
     if (!existingUser) {
-      throw new Error('Email already registered');
+      throw new Error('User Not Found');
     }
 
     const isPasswordValid = await comparePassword(
