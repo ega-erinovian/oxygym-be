@@ -127,6 +127,7 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password',
   username: 'username',
   role: 'role',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -139,15 +140,17 @@ exports.Prisma.MemberScalarFieldEnum = {
   address: 'address',
   gender: 'gender',
   join_date: 'join_date',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.Membership_PlanScalarFieldEnum = {
+exports.Prisma.MembershipPlanScalarFieldEnum = {
   id: 'id',
   name: 'name',
   duration_days: 'duration_days',
   price: 'price',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -159,6 +162,7 @@ exports.Prisma.SubscriptionScalarFieldEnum = {
   start_date: 'start_date',
   end_date: 'end_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -170,6 +174,7 @@ exports.Prisma.PaymentScalarFieldEnum = {
   payment_method: 'payment_method',
   payment_date: 'payment_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -177,7 +182,10 @@ exports.Prisma.PaymentScalarFieldEnum = {
 exports.Prisma.AttendanceScalarFieldEnum = {
   id: 'id',
   member_id: 'member_id',
-  check_in_time: 'check_in_time'
+  check_in_time: 'check_in_time',
+  isDeleted: 'isDeleted',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -205,13 +213,13 @@ exports.Status = exports.$Enums.Status = {
   PENDING: 'PENDING'
 };
 
-exports.Payment_Method = exports.$Enums.Payment_Method = {
+exports.PaymentMethod = exports.$Enums.PaymentMethod = {
   CASH: 'CASH',
   TRANSFER: 'TRANSFER',
   QRIS: 'QRIS'
 };
 
-exports.Payment_Status = exports.$Enums.Payment_Status = {
+exports.PaymentStatus = exports.$Enums.PaymentStatus = {
   SUCCESS: 'SUCCESS',
   FAILED: 'FAILED'
 };
@@ -219,7 +227,7 @@ exports.Payment_Status = exports.$Enums.Payment_Status = {
 exports.Prisma.ModelName = {
   User: 'User',
   Member: 'Member',
-  Membership_Plan: 'Membership_Plan',
+  MembershipPlan: 'MembershipPlan',
   Subscription: 'Subscription',
   Payment: 'Payment',
   Attendance: 'Attendance'

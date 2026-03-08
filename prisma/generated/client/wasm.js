@@ -99,6 +99,7 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password',
   username: 'username',
   role: 'role',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -111,15 +112,17 @@ exports.Prisma.MemberScalarFieldEnum = {
   address: 'address',
   gender: 'gender',
   join_date: 'join_date',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.Membership_PlanScalarFieldEnum = {
+exports.Prisma.MembershipPlanScalarFieldEnum = {
   id: 'id',
   name: 'name',
   duration_days: 'duration_days',
   price: 'price',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -131,6 +134,7 @@ exports.Prisma.SubscriptionScalarFieldEnum = {
   start_date: 'start_date',
   end_date: 'end_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -142,6 +146,7 @@ exports.Prisma.PaymentScalarFieldEnum = {
   payment_method: 'payment_method',
   payment_date: 'payment_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -149,7 +154,10 @@ exports.Prisma.PaymentScalarFieldEnum = {
 exports.Prisma.AttendanceScalarFieldEnum = {
   id: 'id',
   member_id: 'member_id',
-  check_in_time: 'check_in_time'
+  check_in_time: 'check_in_time',
+  isDeleted: 'isDeleted',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -177,12 +185,12 @@ exports.Status = exports.$Enums.Status = {
   PENDING: 'PENDING'
 };
 
-exports.Payment_Status = exports.$Enums.Payment_Status = {
+exports.PaymentStatus = exports.$Enums.PaymentStatus = {
   SUCCESS: 'SUCCESS',
   FAILED: 'FAILED'
 };
 
-exports.Payment_Method = exports.$Enums.Payment_Method = {
+exports.PaymentMethod = exports.$Enums.PaymentMethod = {
   CASH: 'CASH',
   TRANSFER: 'TRANSFER',
   QRIS: 'QRIS'
@@ -191,7 +199,7 @@ exports.Payment_Method = exports.$Enums.Payment_Method = {
 exports.Prisma.ModelName = {
   User: 'User',
   Member: 'Member',
-  Membership_Plan: 'Membership_Plan',
+  MembershipPlan: 'MembershipPlan',
   Subscription: 'Subscription',
   Payment: 'Payment',
   Attendance: 'Attendance'
@@ -244,13 +252,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\nmodel User {\n  id       String @id @default(uuid())\n  email    String @unique\n  password String\n  username String\n  role     Role\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n  member    Member?\n\n  @@map(\"users\")\n}\n\nenum Role {\n  USER\n  ADMIN\n}\n\nmodel Member {\n  id           String   @id @default(uuid())\n  user_id      String   @unique\n  full_name    String\n  phone_number String\n  address      String\n  gender       Gender\n  join_date    DateTime @default(now())\n\n  user          User           @relation(fields: [user_id], references: [id])\n  createdAt     DateTime       @default(now())\n  updatedAt     DateTime       @updatedAt\n  subscriptions Subscription[]\n  attendances   Attendance[]\n\n  @@map(\"members\")\n}\n\nenum Gender {\n  MALE\n  FEMALE\n}\n\nmodel Membership_Plan {\n  id            String @id @default(uuid())\n  name          String\n  duration_days Int\n  price         Int\n\n  createdAt     DateTime       @default(now())\n  updatedAt     DateTime       @updatedAt\n  subscriptions Subscription[]\n\n  @@map(\"membership_plans\")\n}\n\nmodel Subscription {\n  id         String   @id @default(uuid())\n  member_id  String\n  plan_id    String\n  start_date DateTime @default(now())\n  end_date   DateTime\n  status     Status\n\n  member    Member          @relation(fields: [member_id], references: [id])\n  plan      Membership_Plan @relation(fields: [plan_id], references: [id])\n  createdAt DateTime        @default(now())\n  updatedAt DateTime        @updatedAt\n\n  @@map(\"subscriptions\")\n}\n\nenum Status {\n  ACTIVE\n  EXPIRED\n  PENDING\n}\n\nmodel Payment {\n  id              String         @id @default(uuid())\n  subscription_id String\n  amount_paid     Int\n  payment_method  Payment_Method\n  payment_date    DateTime       @default(now())\n  status          Payment_Status\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@map(\"payments\")\n}\n\nenum Payment_Status {\n  SUCCESS\n  FAILED\n}\n\nenum Payment_Method {\n  CASH\n  TRANSFER\n  QRIS\n}\n\nmodel Attendance {\n  id            String   @id @default(uuid())\n  member_id     String\n  check_in_time DateTime @default(now())\n  member        Member   @relation(fields: [member_id], references: [id])\n\n  @@map(\"attendances\")\n}\n",
-  "inlineSchemaHash": "4668cd9c2008e011631debcca2c6af9d7ea259d78265021e5f0a8ca4c4df36a1",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\nmodel User {\n  id       String @id @default(uuid())\n  email    String @unique\n  password String\n  username String\n  role     Role\n\n  isDeleted Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n  member    Member?\n\n  @@map(\"users\")\n}\n\nenum Role {\n  USER\n  ADMIN\n}\n\nmodel Member {\n  id           String   @id @default(uuid())\n  user_id      String   @unique\n  full_name    String\n  phone_number String\n  address      String\n  gender       Gender\n  join_date    DateTime @default(now())\n\n  isDeleted     Boolean        @default(false)\n  user          User           @relation(fields: [user_id], references: [id])\n  createdAt     DateTime       @default(now())\n  updatedAt     DateTime       @updatedAt\n  subscriptions Subscription[]\n  attendances   Attendance[]\n\n  @@map(\"members\")\n}\n\nenum Gender {\n  MALE\n  FEMALE\n}\n\nmodel MembershipPlan {\n  id            String @id @default(uuid())\n  name          String\n  duration_days Int\n  price         Int\n\n  isDeleted     Boolean        @default(false)\n  createdAt     DateTime       @default(now())\n  updatedAt     DateTime       @updatedAt\n  subscriptions Subscription[]\n\n  @@map(\"membership_plans\")\n}\n\nmodel Subscription {\n  id         String   @id @default(uuid())\n  member_id  String\n  plan_id    String\n  start_date DateTime @default(now())\n  end_date   DateTime\n  status     Status\n\n  isDeleted Boolean        @default(false)\n  member    Member         @relation(fields: [member_id], references: [id])\n  plan      MembershipPlan @relation(fields: [plan_id], references: [id])\n  createdAt DateTime       @default(now())\n  updatedAt DateTime       @updatedAt\n\n  @@map(\"subscriptions\")\n}\n\nenum Status {\n  ACTIVE\n  EXPIRED\n  PENDING\n}\n\nmodel Payment {\n  id              String        @id @default(uuid())\n  subscription_id String\n  amount_paid     Int\n  payment_method  PaymentMethod\n  payment_date    DateTime      @default(now())\n  status          PaymentStatus\n\n  isDeleted Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@map(\"payments\")\n}\n\nenum PaymentStatus {\n  SUCCESS\n  FAILED\n\n  @@map(\"Payment_Status\")\n}\n\nenum PaymentMethod {\n  CASH\n  TRANSFER\n  QRIS\n\n  @@map(\"Payment_Method\")\n}\n\nmodel Attendance {\n  id            String   @id @default(uuid())\n  member_id     String\n  check_in_time DateTime @default(now())\n  member        Member   @relation(fields: [member_id], references: [id])\n\n  isDeleted Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@map(\"attendances\")\n}\n",
+  "inlineSchemaHash": "f49410674fcd9b68c2bc8848156d13d820aa2a490987ba88c5b4c2ba1b65d4c0",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"MemberToUser\"}],\"dbName\":\"users\"},\"Member\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"full_name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"phone_number\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"address\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"gender\",\"kind\":\"enum\",\"type\":\"Gender\"},{\"name\":\"join_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"MemberToUser\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"subscriptions\",\"kind\":\"object\",\"type\":\"Subscription\",\"relationName\":\"MemberToSubscription\"},{\"name\":\"attendances\",\"kind\":\"object\",\"type\":\"Attendance\",\"relationName\":\"AttendanceToMember\"}],\"dbName\":\"members\"},\"Membership_Plan\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"duration_days\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"price\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"subscriptions\",\"kind\":\"object\",\"type\":\"Subscription\",\"relationName\":\"Membership_PlanToSubscription\"}],\"dbName\":\"membership_plans\"},\"Subscription\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"plan_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"start_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"end_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"Status\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"MemberToSubscription\"},{\"name\":\"plan\",\"kind\":\"object\",\"type\":\"Membership_Plan\",\"relationName\":\"Membership_PlanToSubscription\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":\"subscriptions\"},\"Payment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"subscription_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"amount_paid\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"payment_method\",\"kind\":\"enum\",\"type\":\"Payment_Method\"},{\"name\":\"payment_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"Payment_Status\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":\"payments\"},\"Attendance\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"check_in_time\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"AttendanceToMember\"}],\"dbName\":\"attendances\"}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"username\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"enum\",\"type\":\"Role\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"MemberToUser\"}],\"dbName\":\"users\"},\"Member\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"full_name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"phone_number\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"address\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"gender\",\"kind\":\"enum\",\"type\":\"Gender\"},{\"name\":\"join_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"MemberToUser\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"subscriptions\",\"kind\":\"object\",\"type\":\"Subscription\",\"relationName\":\"MemberToSubscription\"},{\"name\":\"attendances\",\"kind\":\"object\",\"type\":\"Attendance\",\"relationName\":\"AttendanceToMember\"}],\"dbName\":\"members\"},\"MembershipPlan\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"duration_days\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"price\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"subscriptions\",\"kind\":\"object\",\"type\":\"Subscription\",\"relationName\":\"MembershipPlanToSubscription\"}],\"dbName\":\"membership_plans\"},\"Subscription\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"plan_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"start_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"end_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"Status\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"MemberToSubscription\"},{\"name\":\"plan\",\"kind\":\"object\",\"type\":\"MembershipPlan\",\"relationName\":\"MembershipPlanToSubscription\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":\"subscriptions\"},\"Payment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"subscription_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"amount_paid\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"payment_method\",\"kind\":\"enum\",\"type\":\"PaymentMethod\"},{\"name\":\"payment_date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"status\",\"kind\":\"enum\",\"type\":\"PaymentStatus\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":\"payments\"},\"Attendance\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"member_id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"check_in_time\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"member\",\"kind\":\"object\",\"type\":\"Member\",\"relationName\":\"AttendanceToMember\"},{\"name\":\"isDeleted\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":\"attendances\"}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

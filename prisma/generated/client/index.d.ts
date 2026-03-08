@@ -24,10 +24,10 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  */
 export type Member = $Result.DefaultSelection<Prisma.$MemberPayload>
 /**
- * Model Membership_Plan
+ * Model MembershipPlan
  * 
  */
-export type Membership_Plan = $Result.DefaultSelection<Prisma.$Membership_PlanPayload>
+export type MembershipPlan = $Result.DefaultSelection<Prisma.$MembershipPlanPayload>
 /**
  * Model Subscription
  * 
@@ -73,21 +73,21 @@ export const Status: {
 export type Status = (typeof Status)[keyof typeof Status]
 
 
-export const Payment_Status: {
+export const PaymentStatus: {
   SUCCESS: 'SUCCESS',
   FAILED: 'FAILED'
 };
 
-export type Payment_Status = (typeof Payment_Status)[keyof typeof Payment_Status]
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
 
 
-export const Payment_Method: {
+export const PaymentMethod: {
   CASH: 'CASH',
   TRANSFER: 'TRANSFER',
   QRIS: 'QRIS'
 };
 
-export type Payment_Method = (typeof Payment_Method)[keyof typeof Payment_Method]
+export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
 
 }
 
@@ -103,13 +103,13 @@ export type Status = $Enums.Status
 
 export const Status: typeof $Enums.Status
 
-export type Payment_Status = $Enums.Payment_Status
+export type PaymentStatus = $Enums.PaymentStatus
 
-export const Payment_Status: typeof $Enums.Payment_Status
+export const PaymentStatus: typeof $Enums.PaymentStatus
 
-export type Payment_Method = $Enums.Payment_Method
+export type PaymentMethod = $Enums.PaymentMethod
 
-export const Payment_Method: typeof $Enums.Payment_Method
+export const PaymentMethod: typeof $Enums.PaymentMethod
 
 /**
  * ##  Prisma Client ʲˢ
@@ -250,14 +250,14 @@ export class PrismaClient<
   get member(): Prisma.MemberDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.membership_Plan`: Exposes CRUD operations for the **Membership_Plan** model.
+   * `prisma.membershipPlan`: Exposes CRUD operations for the **MembershipPlan** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Membership_Plans
-    * const membership_Plans = await prisma.membership_Plan.findMany()
+    * // Fetch zero or more MembershipPlans
+    * const membershipPlans = await prisma.membershipPlan.findMany()
     * ```
     */
-  get membership_Plan(): Prisma.Membership_PlanDelegate<ExtArgs, ClientOptions>;
+  get membershipPlan(): Prisma.MembershipPlanDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.subscription`: Exposes CRUD operations for the **Subscription** model.
@@ -731,7 +731,7 @@ export namespace Prisma {
   export const ModelName: {
     User: 'User',
     Member: 'Member',
-    Membership_Plan: 'Membership_Plan',
+    MembershipPlan: 'MembershipPlan',
     Subscription: 'Subscription',
     Payment: 'Payment',
     Attendance: 'Attendance'
@@ -753,7 +753,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "member" | "membership_Plan" | "subscription" | "payment" | "attendance"
+      modelProps: "user" | "member" | "membershipPlan" | "subscription" | "payment" | "attendance"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -905,77 +905,77 @@ export namespace Prisma {
           }
         }
       }
-      Membership_Plan: {
-        payload: Prisma.$Membership_PlanPayload<ExtArgs>
-        fields: Prisma.Membership_PlanFieldRefs
+      MembershipPlan: {
+        payload: Prisma.$MembershipPlanPayload<ExtArgs>
+        fields: Prisma.MembershipPlanFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Membership_PlanFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload> | null
+            args: Prisma.MembershipPlanFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Membership_PlanFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           findFirst: {
-            args: Prisma.Membership_PlanFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload> | null
+            args: Prisma.MembershipPlanFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Membership_PlanFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           findMany: {
-            args: Prisma.Membership_PlanFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>[]
+            args: Prisma.MembershipPlanFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>[]
           }
           create: {
-            args: Prisma.Membership_PlanCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           createMany: {
-            args: Prisma.Membership_PlanCreateManyArgs<ExtArgs>
+            args: Prisma.MembershipPlanCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.Membership_PlanCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>[]
+            args: Prisma.MembershipPlanCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>[]
           }
           delete: {
-            args: Prisma.Membership_PlanDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           update: {
-            args: Prisma.Membership_PlanUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           deleteMany: {
-            args: Prisma.Membership_PlanDeleteManyArgs<ExtArgs>
+            args: Prisma.MembershipPlanDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.Membership_PlanUpdateManyArgs<ExtArgs>
+            args: Prisma.MembershipPlanUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.Membership_PlanUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>[]
+            args: Prisma.MembershipPlanUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>[]
           }
           upsert: {
-            args: Prisma.Membership_PlanUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$Membership_PlanPayload>
+            args: Prisma.MembershipPlanUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MembershipPlanPayload>
           }
           aggregate: {
-            args: Prisma.Membership_PlanAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateMembership_Plan>
+            args: Prisma.MembershipPlanAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMembershipPlan>
           }
           groupBy: {
-            args: Prisma.Membership_PlanGroupByArgs<ExtArgs>
-            result: $Utils.Optional<Membership_PlanGroupByOutputType>[]
+            args: Prisma.MembershipPlanGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MembershipPlanGroupByOutputType>[]
           }
           count: {
-            args: Prisma.Membership_PlanCountArgs<ExtArgs>
-            result: $Utils.Optional<Membership_PlanCountAggregateOutputType> | number
+            args: Prisma.MembershipPlanCountArgs<ExtArgs>
+            result: $Utils.Optional<MembershipPlanCountAggregateOutputType> | number
           }
         }
       }
@@ -1299,7 +1299,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     user?: UserOmit
     member?: MemberOmit
-    membership_Plan?: Membership_PlanOmit
+    membershipPlan?: MembershipPlanOmit
     subscription?: SubscriptionOmit
     payment?: PaymentOmit
     attendance?: AttendanceOmit
@@ -1419,32 +1419,32 @@ export namespace Prisma {
 
 
   /**
-   * Count Type Membership_PlanCountOutputType
+   * Count Type MembershipPlanCountOutputType
    */
 
-  export type Membership_PlanCountOutputType = {
+  export type MembershipPlanCountOutputType = {
     subscriptions: number
   }
 
-  export type Membership_PlanCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    subscriptions?: boolean | Membership_PlanCountOutputTypeCountSubscriptionsArgs
+  export type MembershipPlanCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    subscriptions?: boolean | MembershipPlanCountOutputTypeCountSubscriptionsArgs
   }
 
   // Custom InputTypes
   /**
-   * Membership_PlanCountOutputType without action
+   * MembershipPlanCountOutputType without action
    */
-  export type Membership_PlanCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_PlanCountOutputType
+     * Select specific fields to fetch from the MembershipPlanCountOutputType
      */
-    select?: Membership_PlanCountOutputTypeSelect<ExtArgs> | null
+    select?: MembershipPlanCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * Membership_PlanCountOutputType without action
+   * MembershipPlanCountOutputType without action
    */
-  export type Membership_PlanCountOutputTypeCountSubscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanCountOutputTypeCountSubscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: SubscriptionWhereInput
   }
 
@@ -1469,6 +1469,7 @@ export namespace Prisma {
     password: string | null
     username: string | null
     role: $Enums.Role | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1479,6 +1480,7 @@ export namespace Prisma {
     password: string | null
     username: string | null
     role: $Enums.Role | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1489,6 +1491,7 @@ export namespace Prisma {
     password: number
     username: number
     role: number
+    isDeleted: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -1501,6 +1504,7 @@ export namespace Prisma {
     password?: true
     username?: true
     role?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1511,6 +1515,7 @@ export namespace Prisma {
     password?: true
     username?: true
     role?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1521,6 +1526,7 @@ export namespace Prisma {
     password?: true
     username?: true
     role?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1604,6 +1610,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted: boolean
     createdAt: Date
     updatedAt: Date
     _count: UserCountAggregateOutputType | null
@@ -1631,6 +1638,7 @@ export namespace Prisma {
     password?: boolean
     username?: boolean
     role?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     member?: boolean | User$memberArgs<ExtArgs>
@@ -1642,6 +1650,7 @@ export namespace Prisma {
     password?: boolean
     username?: boolean
     role?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1652,6 +1661,7 @@ export namespace Prisma {
     password?: boolean
     username?: boolean
     role?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["user"]>
@@ -1662,11 +1672,12 @@ export namespace Prisma {
     password?: boolean
     username?: boolean
     role?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "username" | "role" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "username" | "role" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | User$memberArgs<ExtArgs>
   }
@@ -1684,6 +1695,7 @@ export namespace Prisma {
       password: string
       username: string
       role: $Enums.Role
+      isDeleted: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["user"]>
@@ -2115,6 +2127,7 @@ export namespace Prisma {
     readonly password: FieldRef<"User", 'String'>
     readonly username: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'Role'>
+    readonly isDeleted: FieldRef<"User", 'Boolean'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
   }
@@ -2560,6 +2573,7 @@ export namespace Prisma {
     address: string | null
     gender: $Enums.Gender | null
     join_date: Date | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2572,6 +2586,7 @@ export namespace Prisma {
     address: string | null
     gender: $Enums.Gender | null
     join_date: Date | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2584,6 +2599,7 @@ export namespace Prisma {
     address: number
     gender: number
     join_date: number
+    isDeleted: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -2598,6 +2614,7 @@ export namespace Prisma {
     address?: true
     gender?: true
     join_date?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2610,6 +2627,7 @@ export namespace Prisma {
     address?: true
     gender?: true
     join_date?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2622,6 +2640,7 @@ export namespace Prisma {
     address?: true
     gender?: true
     join_date?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -2707,6 +2726,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date: Date
+    isDeleted: boolean
     createdAt: Date
     updatedAt: Date
     _count: MemberCountAggregateOutputType | null
@@ -2736,6 +2756,7 @@ export namespace Prisma {
     address?: boolean
     gender?: boolean
     join_date?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2752,6 +2773,7 @@ export namespace Prisma {
     address?: boolean
     gender?: boolean
     join_date?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2765,6 +2787,7 @@ export namespace Prisma {
     address?: boolean
     gender?: boolean
     join_date?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2778,11 +2801,12 @@ export namespace Prisma {
     address?: boolean
     gender?: boolean
     join_date?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type MemberOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "full_name" | "phone_number" | "address" | "gender" | "join_date" | "createdAt" | "updatedAt", ExtArgs["result"]["member"]>
+  export type MemberOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "full_name" | "phone_number" | "address" | "gender" | "join_date" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["member"]>
   export type MemberInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     subscriptions?: boolean | Member$subscriptionsArgs<ExtArgs>
@@ -2811,6 +2835,7 @@ export namespace Prisma {
       address: string
       gender: $Enums.Gender
       join_date: Date
+      isDeleted: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["member"]>
@@ -3246,6 +3271,7 @@ export namespace Prisma {
     readonly address: FieldRef<"Member", 'String'>
     readonly gender: FieldRef<"Member", 'Gender'>
     readonly join_date: FieldRef<"Member", 'DateTime'>
+    readonly isDeleted: FieldRef<"Member", 'Boolean'>
     readonly createdAt: FieldRef<"Member", 'DateTime'>
     readonly updatedAt: FieldRef<"Member", 'DateTime'>
   }
@@ -3711,256 +3737,267 @@ export namespace Prisma {
 
 
   /**
-   * Model Membership_Plan
+   * Model MembershipPlan
    */
 
-  export type AggregateMembership_Plan = {
-    _count: Membership_PlanCountAggregateOutputType | null
-    _avg: Membership_PlanAvgAggregateOutputType | null
-    _sum: Membership_PlanSumAggregateOutputType | null
-    _min: Membership_PlanMinAggregateOutputType | null
-    _max: Membership_PlanMaxAggregateOutputType | null
+  export type AggregateMembershipPlan = {
+    _count: MembershipPlanCountAggregateOutputType | null
+    _avg: MembershipPlanAvgAggregateOutputType | null
+    _sum: MembershipPlanSumAggregateOutputType | null
+    _min: MembershipPlanMinAggregateOutputType | null
+    _max: MembershipPlanMaxAggregateOutputType | null
   }
 
-  export type Membership_PlanAvgAggregateOutputType = {
+  export type MembershipPlanAvgAggregateOutputType = {
     duration_days: number | null
     price: number | null
   }
 
-  export type Membership_PlanSumAggregateOutputType = {
+  export type MembershipPlanSumAggregateOutputType = {
     duration_days: number | null
     price: number | null
   }
 
-  export type Membership_PlanMinAggregateOutputType = {
+  export type MembershipPlanMinAggregateOutputType = {
     id: string | null
     name: string | null
     duration_days: number | null
     price: number | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type Membership_PlanMaxAggregateOutputType = {
+  export type MembershipPlanMaxAggregateOutputType = {
     id: string | null
     name: string | null
     duration_days: number | null
     price: number | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type Membership_PlanCountAggregateOutputType = {
+  export type MembershipPlanCountAggregateOutputType = {
     id: number
     name: number
     duration_days: number
     price: number
+    isDeleted: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
 
-  export type Membership_PlanAvgAggregateInputType = {
+  export type MembershipPlanAvgAggregateInputType = {
     duration_days?: true
     price?: true
   }
 
-  export type Membership_PlanSumAggregateInputType = {
+  export type MembershipPlanSumAggregateInputType = {
     duration_days?: true
     price?: true
   }
 
-  export type Membership_PlanMinAggregateInputType = {
+  export type MembershipPlanMinAggregateInputType = {
     id?: true
     name?: true
     duration_days?: true
     price?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type Membership_PlanMaxAggregateInputType = {
+  export type MembershipPlanMaxAggregateInputType = {
     id?: true
     name?: true
     duration_days?: true
     price?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type Membership_PlanCountAggregateInputType = {
+  export type MembershipPlanCountAggregateInputType = {
     id?: true
     name?: true
     duration_days?: true
     price?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
   }
 
-  export type Membership_PlanAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Membership_Plan to aggregate.
+     * Filter which MembershipPlan to aggregate.
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Membership_Plans to fetch.
+     * Determine the order of MembershipPlans to fetch.
      */
-    orderBy?: Membership_PlanOrderByWithRelationInput | Membership_PlanOrderByWithRelationInput[]
+    orderBy?: MembershipPlanOrderByWithRelationInput | MembershipPlanOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Membership_PlanWhereUniqueInput
+    cursor?: MembershipPlanWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Membership_Plans from the position of the cursor.
+     * Take `±n` MembershipPlans from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Membership_Plans.
+     * Skip the first `n` MembershipPlans.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Membership_Plans
+     * Count returned MembershipPlans
     **/
-    _count?: true | Membership_PlanCountAggregateInputType
+    _count?: true | MembershipPlanCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: Membership_PlanAvgAggregateInputType
+    _avg?: MembershipPlanAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: Membership_PlanSumAggregateInputType
+    _sum?: MembershipPlanSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Membership_PlanMinAggregateInputType
+    _min?: MembershipPlanMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Membership_PlanMaxAggregateInputType
+    _max?: MembershipPlanMaxAggregateInputType
   }
 
-  export type GetMembership_PlanAggregateType<T extends Membership_PlanAggregateArgs> = {
-        [P in keyof T & keyof AggregateMembership_Plan]: P extends '_count' | 'count'
+  export type GetMembershipPlanAggregateType<T extends MembershipPlanAggregateArgs> = {
+        [P in keyof T & keyof AggregateMembershipPlan]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateMembership_Plan[P]>
-      : GetScalarType<T[P], AggregateMembership_Plan[P]>
+        : GetScalarType<T[P], AggregateMembershipPlan[P]>
+      : GetScalarType<T[P], AggregateMembershipPlan[P]>
   }
 
 
 
 
-  export type Membership_PlanGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Membership_PlanWhereInput
-    orderBy?: Membership_PlanOrderByWithAggregationInput | Membership_PlanOrderByWithAggregationInput[]
-    by: Membership_PlanScalarFieldEnum[] | Membership_PlanScalarFieldEnum
-    having?: Membership_PlanScalarWhereWithAggregatesInput
+  export type MembershipPlanGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MembershipPlanWhereInput
+    orderBy?: MembershipPlanOrderByWithAggregationInput | MembershipPlanOrderByWithAggregationInput[]
+    by: MembershipPlanScalarFieldEnum[] | MembershipPlanScalarFieldEnum
+    having?: MembershipPlanScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Membership_PlanCountAggregateInputType | true
-    _avg?: Membership_PlanAvgAggregateInputType
-    _sum?: Membership_PlanSumAggregateInputType
-    _min?: Membership_PlanMinAggregateInputType
-    _max?: Membership_PlanMaxAggregateInputType
+    _count?: MembershipPlanCountAggregateInputType | true
+    _avg?: MembershipPlanAvgAggregateInputType
+    _sum?: MembershipPlanSumAggregateInputType
+    _min?: MembershipPlanMinAggregateInputType
+    _max?: MembershipPlanMaxAggregateInputType
   }
 
-  export type Membership_PlanGroupByOutputType = {
+  export type MembershipPlanGroupByOutputType = {
     id: string
     name: string
     duration_days: number
     price: number
+    isDeleted: boolean
     createdAt: Date
     updatedAt: Date
-    _count: Membership_PlanCountAggregateOutputType | null
-    _avg: Membership_PlanAvgAggregateOutputType | null
-    _sum: Membership_PlanSumAggregateOutputType | null
-    _min: Membership_PlanMinAggregateOutputType | null
-    _max: Membership_PlanMaxAggregateOutputType | null
+    _count: MembershipPlanCountAggregateOutputType | null
+    _avg: MembershipPlanAvgAggregateOutputType | null
+    _sum: MembershipPlanSumAggregateOutputType | null
+    _min: MembershipPlanMinAggregateOutputType | null
+    _max: MembershipPlanMaxAggregateOutputType | null
   }
 
-  type GetMembership_PlanGroupByPayload<T extends Membership_PlanGroupByArgs> = Prisma.PrismaPromise<
+  type GetMembershipPlanGroupByPayload<T extends MembershipPlanGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Membership_PlanGroupByOutputType, T['by']> &
+      PickEnumerable<MembershipPlanGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Membership_PlanGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MembershipPlanGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Membership_PlanGroupByOutputType[P]>
-            : GetScalarType<T[P], Membership_PlanGroupByOutputType[P]>
+              : GetScalarType<T[P], MembershipPlanGroupByOutputType[P]>
+            : GetScalarType<T[P], MembershipPlanGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Membership_PlanSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembershipPlanSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     duration_days?: boolean
     price?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    subscriptions?: boolean | Membership_Plan$subscriptionsArgs<ExtArgs>
-    _count?: boolean | Membership_PlanCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["membership_Plan"]>
+    subscriptions?: boolean | MembershipPlan$subscriptionsArgs<ExtArgs>
+    _count?: boolean | MembershipPlanCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["membershipPlan"]>
 
-  export type Membership_PlanSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembershipPlanSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     duration_days?: boolean
     price?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["membership_Plan"]>
+  }, ExtArgs["result"]["membershipPlan"]>
 
-  export type Membership_PlanSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MembershipPlanSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     duration_days?: boolean
     price?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["membership_Plan"]>
+  }, ExtArgs["result"]["membershipPlan"]>
 
-  export type Membership_PlanSelectScalar = {
+  export type MembershipPlanSelectScalar = {
     id?: boolean
     name?: boolean
     duration_days?: boolean
     price?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type Membership_PlanOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "duration_days" | "price" | "createdAt" | "updatedAt", ExtArgs["result"]["membership_Plan"]>
-  export type Membership_PlanInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    subscriptions?: boolean | Membership_Plan$subscriptionsArgs<ExtArgs>
-    _count?: boolean | Membership_PlanCountOutputTypeDefaultArgs<ExtArgs>
+  export type MembershipPlanOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "duration_days" | "price" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["membershipPlan"]>
+  export type MembershipPlanInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    subscriptions?: boolean | MembershipPlan$subscriptionsArgs<ExtArgs>
+    _count?: boolean | MembershipPlanCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type Membership_PlanIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type Membership_PlanIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type MembershipPlanIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type MembershipPlanIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $Membership_PlanPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Membership_Plan"
+  export type $MembershipPlanPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MembershipPlan"
     objects: {
       subscriptions: Prisma.$SubscriptionPayload<ExtArgs>[]
     }
@@ -3969,138 +4006,139 @@ export namespace Prisma {
       name: string
       duration_days: number
       price: number
+      isDeleted: boolean
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["membership_Plan"]>
+    }, ExtArgs["result"]["membershipPlan"]>
     composites: {}
   }
 
-  type Membership_PlanGetPayload<S extends boolean | null | undefined | Membership_PlanDefaultArgs> = $Result.GetResult<Prisma.$Membership_PlanPayload, S>
+  type MembershipPlanGetPayload<S extends boolean | null | undefined | MembershipPlanDefaultArgs> = $Result.GetResult<Prisma.$MembershipPlanPayload, S>
 
-  type Membership_PlanCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<Membership_PlanFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: Membership_PlanCountAggregateInputType | true
+  type MembershipPlanCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MembershipPlanFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MembershipPlanCountAggregateInputType | true
     }
 
-  export interface Membership_PlanDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Membership_Plan'], meta: { name: 'Membership_Plan' } }
+  export interface MembershipPlanDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MembershipPlan'], meta: { name: 'MembershipPlan' } }
     /**
-     * Find zero or one Membership_Plan that matches the filter.
-     * @param {Membership_PlanFindUniqueArgs} args - Arguments to find a Membership_Plan
+     * Find zero or one MembershipPlan that matches the filter.
+     * @param {MembershipPlanFindUniqueArgs} args - Arguments to find a MembershipPlan
      * @example
-     * // Get one Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.findUnique({
+     * // Get one MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends Membership_PlanFindUniqueArgs>(args: SelectSubset<T, Membership_PlanFindUniqueArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends MembershipPlanFindUniqueArgs>(args: SelectSubset<T, MembershipPlanFindUniqueArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Membership_Plan that matches the filter or throw an error with `error.code='P2025'`
+     * Find one MembershipPlan that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {Membership_PlanFindUniqueOrThrowArgs} args - Arguments to find a Membership_Plan
+     * @param {MembershipPlanFindUniqueOrThrowArgs} args - Arguments to find a MembershipPlan
      * @example
-     * // Get one Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.findUniqueOrThrow({
+     * // Get one MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends Membership_PlanFindUniqueOrThrowArgs>(args: SelectSubset<T, Membership_PlanFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends MembershipPlanFindUniqueOrThrowArgs>(args: SelectSubset<T, MembershipPlanFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Membership_Plan that matches the filter.
+     * Find the first MembershipPlan that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanFindFirstArgs} args - Arguments to find a Membership_Plan
+     * @param {MembershipPlanFindFirstArgs} args - Arguments to find a MembershipPlan
      * @example
-     * // Get one Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.findFirst({
+     * // Get one MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends Membership_PlanFindFirstArgs>(args?: SelectSubset<T, Membership_PlanFindFirstArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends MembershipPlanFindFirstArgs>(args?: SelectSubset<T, MembershipPlanFindFirstArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Membership_Plan that matches the filter or
+     * Find the first MembershipPlan that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanFindFirstOrThrowArgs} args - Arguments to find a Membership_Plan
+     * @param {MembershipPlanFindFirstOrThrowArgs} args - Arguments to find a MembershipPlan
      * @example
-     * // Get one Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.findFirstOrThrow({
+     * // Get one MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends Membership_PlanFindFirstOrThrowArgs>(args?: SelectSubset<T, Membership_PlanFindFirstOrThrowArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends MembershipPlanFindFirstOrThrowArgs>(args?: SelectSubset<T, MembershipPlanFindFirstOrThrowArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Membership_Plans that matches the filter.
+     * Find zero or more MembershipPlans that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MembershipPlanFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Membership_Plans
-     * const membership_Plans = await prisma.membership_Plan.findMany()
+     * // Get all MembershipPlans
+     * const membershipPlans = await prisma.membershipPlan.findMany()
      * 
-     * // Get first 10 Membership_Plans
-     * const membership_Plans = await prisma.membership_Plan.findMany({ take: 10 })
+     * // Get first 10 MembershipPlans
+     * const membershipPlans = await prisma.membershipPlan.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const membership_PlanWithIdOnly = await prisma.membership_Plan.findMany({ select: { id: true } })
+     * const membershipPlanWithIdOnly = await prisma.membershipPlan.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends Membership_PlanFindManyArgs>(args?: SelectSubset<T, Membership_PlanFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends MembershipPlanFindManyArgs>(args?: SelectSubset<T, MembershipPlanFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Membership_Plan.
-     * @param {Membership_PlanCreateArgs} args - Arguments to create a Membership_Plan.
+     * Create a MembershipPlan.
+     * @param {MembershipPlanCreateArgs} args - Arguments to create a MembershipPlan.
      * @example
-     * // Create one Membership_Plan
-     * const Membership_Plan = await prisma.membership_Plan.create({
+     * // Create one MembershipPlan
+     * const MembershipPlan = await prisma.membershipPlan.create({
      *   data: {
-     *     // ... data to create a Membership_Plan
+     *     // ... data to create a MembershipPlan
      *   }
      * })
      * 
      */
-    create<T extends Membership_PlanCreateArgs>(args: SelectSubset<T, Membership_PlanCreateArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends MembershipPlanCreateArgs>(args: SelectSubset<T, MembershipPlanCreateArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Membership_Plans.
-     * @param {Membership_PlanCreateManyArgs} args - Arguments to create many Membership_Plans.
+     * Create many MembershipPlans.
+     * @param {MembershipPlanCreateManyArgs} args - Arguments to create many MembershipPlans.
      * @example
-     * // Create many Membership_Plans
-     * const membership_Plan = await prisma.membership_Plan.createMany({
+     * // Create many MembershipPlans
+     * const membershipPlan = await prisma.membershipPlan.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends Membership_PlanCreateManyArgs>(args?: SelectSubset<T, Membership_PlanCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MembershipPlanCreateManyArgs>(args?: SelectSubset<T, MembershipPlanCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Membership_Plans and returns the data saved in the database.
-     * @param {Membership_PlanCreateManyAndReturnArgs} args - Arguments to create many Membership_Plans.
+     * Create many MembershipPlans and returns the data saved in the database.
+     * @param {MembershipPlanCreateManyAndReturnArgs} args - Arguments to create many MembershipPlans.
      * @example
-     * // Create many Membership_Plans
-     * const membership_Plan = await prisma.membership_Plan.createManyAndReturn({
+     * // Create many MembershipPlans
+     * const membershipPlan = await prisma.membershipPlan.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Membership_Plans and only return the `id`
-     * const membership_PlanWithIdOnly = await prisma.membership_Plan.createManyAndReturn({
+     * // Create many MembershipPlans and only return the `id`
+     * const membershipPlanWithIdOnly = await prisma.membershipPlan.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -4110,28 +4148,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends Membership_PlanCreateManyAndReturnArgs>(args?: SelectSubset<T, Membership_PlanCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends MembershipPlanCreateManyAndReturnArgs>(args?: SelectSubset<T, MembershipPlanCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Membership_Plan.
-     * @param {Membership_PlanDeleteArgs} args - Arguments to delete one Membership_Plan.
+     * Delete a MembershipPlan.
+     * @param {MembershipPlanDeleteArgs} args - Arguments to delete one MembershipPlan.
      * @example
-     * // Delete one Membership_Plan
-     * const Membership_Plan = await prisma.membership_Plan.delete({
+     * // Delete one MembershipPlan
+     * const MembershipPlan = await prisma.membershipPlan.delete({
      *   where: {
-     *     // ... filter to delete one Membership_Plan
+     *     // ... filter to delete one MembershipPlan
      *   }
      * })
      * 
      */
-    delete<T extends Membership_PlanDeleteArgs>(args: SelectSubset<T, Membership_PlanDeleteArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends MembershipPlanDeleteArgs>(args: SelectSubset<T, MembershipPlanDeleteArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Membership_Plan.
-     * @param {Membership_PlanUpdateArgs} args - Arguments to update one Membership_Plan.
+     * Update one MembershipPlan.
+     * @param {MembershipPlanUpdateArgs} args - Arguments to update one MembershipPlan.
      * @example
-     * // Update one Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.update({
+     * // Update one MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4141,30 +4179,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends Membership_PlanUpdateArgs>(args: SelectSubset<T, Membership_PlanUpdateArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends MembershipPlanUpdateArgs>(args: SelectSubset<T, MembershipPlanUpdateArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Membership_Plans.
-     * @param {Membership_PlanDeleteManyArgs} args - Arguments to filter Membership_Plans to delete.
+     * Delete zero or more MembershipPlans.
+     * @param {MembershipPlanDeleteManyArgs} args - Arguments to filter MembershipPlans to delete.
      * @example
-     * // Delete a few Membership_Plans
-     * const { count } = await prisma.membership_Plan.deleteMany({
+     * // Delete a few MembershipPlans
+     * const { count } = await prisma.membershipPlan.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends Membership_PlanDeleteManyArgs>(args?: SelectSubset<T, Membership_PlanDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MembershipPlanDeleteManyArgs>(args?: SelectSubset<T, MembershipPlanDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Membership_Plans.
+     * Update zero or more MembershipPlans.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MembershipPlanUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Membership_Plans
-     * const membership_Plan = await prisma.membership_Plan.updateMany({
+     * // Update many MembershipPlans
+     * const membershipPlan = await prisma.membershipPlan.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4174,14 +4212,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends Membership_PlanUpdateManyArgs>(args: SelectSubset<T, Membership_PlanUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MembershipPlanUpdateManyArgs>(args: SelectSubset<T, MembershipPlanUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Membership_Plans and returns the data updated in the database.
-     * @param {Membership_PlanUpdateManyAndReturnArgs} args - Arguments to update many Membership_Plans.
+     * Update zero or more MembershipPlans and returns the data updated in the database.
+     * @param {MembershipPlanUpdateManyAndReturnArgs} args - Arguments to update many MembershipPlans.
      * @example
-     * // Update many Membership_Plans
-     * const membership_Plan = await prisma.membership_Plan.updateManyAndReturn({
+     * // Update many MembershipPlans
+     * const membershipPlan = await prisma.membershipPlan.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4190,8 +4228,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Membership_Plans and only return the `id`
-     * const membership_PlanWithIdOnly = await prisma.membership_Plan.updateManyAndReturn({
+     * // Update zero or more MembershipPlans and only return the `id`
+     * const membershipPlanWithIdOnly = await prisma.membershipPlan.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -4204,56 +4242,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends Membership_PlanUpdateManyAndReturnArgs>(args: SelectSubset<T, Membership_PlanUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends MembershipPlanUpdateManyAndReturnArgs>(args: SelectSubset<T, MembershipPlanUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Membership_Plan.
-     * @param {Membership_PlanUpsertArgs} args - Arguments to update or create a Membership_Plan.
+     * Create or update one MembershipPlan.
+     * @param {MembershipPlanUpsertArgs} args - Arguments to update or create a MembershipPlan.
      * @example
-     * // Update or create a Membership_Plan
-     * const membership_Plan = await prisma.membership_Plan.upsert({
+     * // Update or create a MembershipPlan
+     * const membershipPlan = await prisma.membershipPlan.upsert({
      *   create: {
-     *     // ... data to create a Membership_Plan
+     *     // ... data to create a MembershipPlan
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Membership_Plan we want to update
+     *     // ... the filter for the MembershipPlan we want to update
      *   }
      * })
      */
-    upsert<T extends Membership_PlanUpsertArgs>(args: SelectSubset<T, Membership_PlanUpsertArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends MembershipPlanUpsertArgs>(args: SelectSubset<T, MembershipPlanUpsertArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Membership_Plans.
+     * Count the number of MembershipPlans.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanCountArgs} args - Arguments to filter Membership_Plans to count.
+     * @param {MembershipPlanCountArgs} args - Arguments to filter MembershipPlans to count.
      * @example
-     * // Count the number of Membership_Plans
-     * const count = await prisma.membership_Plan.count({
+     * // Count the number of MembershipPlans
+     * const count = await prisma.membershipPlan.count({
      *   where: {
-     *     // ... the filter for the Membership_Plans we want to count
+     *     // ... the filter for the MembershipPlans we want to count
      *   }
      * })
     **/
-    count<T extends Membership_PlanCountArgs>(
-      args?: Subset<T, Membership_PlanCountArgs>,
+    count<T extends MembershipPlanCountArgs>(
+      args?: Subset<T, MembershipPlanCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Membership_PlanCountAggregateOutputType>
+          : GetScalarType<T['select'], MembershipPlanCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Membership_Plan.
+     * Allows you to perform aggregations operations on a MembershipPlan.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MembershipPlanAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4273,13 +4311,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Membership_PlanAggregateArgs>(args: Subset<T, Membership_PlanAggregateArgs>): Prisma.PrismaPromise<GetMembership_PlanAggregateType<T>>
+    aggregate<T extends MembershipPlanAggregateArgs>(args: Subset<T, MembershipPlanAggregateArgs>): Prisma.PrismaPromise<GetMembershipPlanAggregateType<T>>
 
     /**
-     * Group by Membership_Plan.
+     * Group by MembershipPlan.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Membership_PlanGroupByArgs} args - Group by arguments.
+     * @param {MembershipPlanGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4294,14 +4332,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Membership_PlanGroupByArgs,
+      T extends MembershipPlanGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Membership_PlanGroupByArgs['orderBy'] }
-        : { orderBy?: Membership_PlanGroupByArgs['orderBy'] },
+        ? { orderBy: MembershipPlanGroupByArgs['orderBy'] }
+        : { orderBy?: MembershipPlanGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4350,22 +4388,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Membership_PlanGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMembership_PlanGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MembershipPlanGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMembershipPlanGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Membership_Plan model
+   * Fields of the MembershipPlan model
    */
-  readonly fields: Membership_PlanFieldRefs;
+  readonly fields: MembershipPlanFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Membership_Plan.
+   * The delegate class that acts as a "Promise-like" for MembershipPlan.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Membership_PlanClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MembershipPlanClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    subscriptions<T extends Membership_Plan$subscriptionsArgs<ExtArgs> = {}>(args?: Subset<T, Membership_Plan$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    subscriptions<T extends MembershipPlan$subscriptionsArgs<ExtArgs> = {}>(args?: Subset<T, MembershipPlan$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4392,406 +4430,407 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Membership_Plan model
+   * Fields of the MembershipPlan model
    */
-  interface Membership_PlanFieldRefs {
-    readonly id: FieldRef<"Membership_Plan", 'String'>
-    readonly name: FieldRef<"Membership_Plan", 'String'>
-    readonly duration_days: FieldRef<"Membership_Plan", 'Int'>
-    readonly price: FieldRef<"Membership_Plan", 'Int'>
-    readonly createdAt: FieldRef<"Membership_Plan", 'DateTime'>
-    readonly updatedAt: FieldRef<"Membership_Plan", 'DateTime'>
+  interface MembershipPlanFieldRefs {
+    readonly id: FieldRef<"MembershipPlan", 'String'>
+    readonly name: FieldRef<"MembershipPlan", 'String'>
+    readonly duration_days: FieldRef<"MembershipPlan", 'Int'>
+    readonly price: FieldRef<"MembershipPlan", 'Int'>
+    readonly isDeleted: FieldRef<"MembershipPlan", 'Boolean'>
+    readonly createdAt: FieldRef<"MembershipPlan", 'DateTime'>
+    readonly updatedAt: FieldRef<"MembershipPlan", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Membership_Plan findUnique
+   * MembershipPlan findUnique
    */
-  export type Membership_PlanFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter, which Membership_Plan to fetch.
+     * Filter, which MembershipPlan to fetch.
      */
-    where: Membership_PlanWhereUniqueInput
+    where: MembershipPlanWhereUniqueInput
   }
 
   /**
-   * Membership_Plan findUniqueOrThrow
+   * MembershipPlan findUniqueOrThrow
    */
-  export type Membership_PlanFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter, which Membership_Plan to fetch.
+     * Filter, which MembershipPlan to fetch.
      */
-    where: Membership_PlanWhereUniqueInput
+    where: MembershipPlanWhereUniqueInput
   }
 
   /**
-   * Membership_Plan findFirst
+   * MembershipPlan findFirst
    */
-  export type Membership_PlanFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter, which Membership_Plan to fetch.
+     * Filter, which MembershipPlan to fetch.
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Membership_Plans to fetch.
+     * Determine the order of MembershipPlans to fetch.
      */
-    orderBy?: Membership_PlanOrderByWithRelationInput | Membership_PlanOrderByWithRelationInput[]
+    orderBy?: MembershipPlanOrderByWithRelationInput | MembershipPlanOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Membership_Plans.
+     * Sets the position for searching for MembershipPlans.
      */
-    cursor?: Membership_PlanWhereUniqueInput
+    cursor?: MembershipPlanWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Membership_Plans from the position of the cursor.
+     * Take `±n` MembershipPlans from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Membership_Plans.
+     * Skip the first `n` MembershipPlans.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Membership_Plans.
+     * Filter by unique combinations of MembershipPlans.
      */
-    distinct?: Membership_PlanScalarFieldEnum | Membership_PlanScalarFieldEnum[]
+    distinct?: MembershipPlanScalarFieldEnum | MembershipPlanScalarFieldEnum[]
   }
 
   /**
-   * Membership_Plan findFirstOrThrow
+   * MembershipPlan findFirstOrThrow
    */
-  export type Membership_PlanFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter, which Membership_Plan to fetch.
+     * Filter, which MembershipPlan to fetch.
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Membership_Plans to fetch.
+     * Determine the order of MembershipPlans to fetch.
      */
-    orderBy?: Membership_PlanOrderByWithRelationInput | Membership_PlanOrderByWithRelationInput[]
+    orderBy?: MembershipPlanOrderByWithRelationInput | MembershipPlanOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Membership_Plans.
+     * Sets the position for searching for MembershipPlans.
      */
-    cursor?: Membership_PlanWhereUniqueInput
+    cursor?: MembershipPlanWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Membership_Plans from the position of the cursor.
+     * Take `±n` MembershipPlans from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Membership_Plans.
+     * Skip the first `n` MembershipPlans.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Membership_Plans.
+     * Filter by unique combinations of MembershipPlans.
      */
-    distinct?: Membership_PlanScalarFieldEnum | Membership_PlanScalarFieldEnum[]
+    distinct?: MembershipPlanScalarFieldEnum | MembershipPlanScalarFieldEnum[]
   }
 
   /**
-   * Membership_Plan findMany
+   * MembershipPlan findMany
    */
-  export type Membership_PlanFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter, which Membership_Plans to fetch.
+     * Filter, which MembershipPlans to fetch.
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Membership_Plans to fetch.
+     * Determine the order of MembershipPlans to fetch.
      */
-    orderBy?: Membership_PlanOrderByWithRelationInput | Membership_PlanOrderByWithRelationInput[]
+    orderBy?: MembershipPlanOrderByWithRelationInput | MembershipPlanOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Membership_Plans.
+     * Sets the position for listing MembershipPlans.
      */
-    cursor?: Membership_PlanWhereUniqueInput
+    cursor?: MembershipPlanWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Membership_Plans from the position of the cursor.
+     * Take `±n` MembershipPlans from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Membership_Plans.
+     * Skip the first `n` MembershipPlans.
      */
     skip?: number
-    distinct?: Membership_PlanScalarFieldEnum | Membership_PlanScalarFieldEnum[]
+    distinct?: MembershipPlanScalarFieldEnum | MembershipPlanScalarFieldEnum[]
   }
 
   /**
-   * Membership_Plan create
+   * MembershipPlan create
    */
-  export type Membership_PlanCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * The data needed to create a Membership_Plan.
+     * The data needed to create a MembershipPlan.
      */
-    data: XOR<Membership_PlanCreateInput, Membership_PlanUncheckedCreateInput>
+    data: XOR<MembershipPlanCreateInput, MembershipPlanUncheckedCreateInput>
   }
 
   /**
-   * Membership_Plan createMany
+   * MembershipPlan createMany
    */
-  export type Membership_PlanCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Membership_Plans.
+     * The data used to create many MembershipPlans.
      */
-    data: Membership_PlanCreateManyInput | Membership_PlanCreateManyInput[]
+    data: MembershipPlanCreateManyInput | MembershipPlanCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Membership_Plan createManyAndReturn
+   * MembershipPlan createManyAndReturn
    */
-  export type Membership_PlanCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelectCreateManyAndReturn<ExtArgs> | null
+    select?: MembershipPlanSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
-     * The data used to create many Membership_Plans.
+     * The data used to create many MembershipPlans.
      */
-    data: Membership_PlanCreateManyInput | Membership_PlanCreateManyInput[]
+    data: MembershipPlanCreateManyInput | MembershipPlanCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Membership_Plan update
+   * MembershipPlan update
    */
-  export type Membership_PlanUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * The data needed to update a Membership_Plan.
+     * The data needed to update a MembershipPlan.
      */
-    data: XOR<Membership_PlanUpdateInput, Membership_PlanUncheckedUpdateInput>
+    data: XOR<MembershipPlanUpdateInput, MembershipPlanUncheckedUpdateInput>
     /**
-     * Choose, which Membership_Plan to update.
+     * Choose, which MembershipPlan to update.
      */
-    where: Membership_PlanWhereUniqueInput
+    where: MembershipPlanWhereUniqueInput
   }
 
   /**
-   * Membership_Plan updateMany
+   * MembershipPlan updateMany
    */
-  export type Membership_PlanUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Membership_Plans.
+     * The data used to update MembershipPlans.
      */
-    data: XOR<Membership_PlanUpdateManyMutationInput, Membership_PlanUncheckedUpdateManyInput>
+    data: XOR<MembershipPlanUpdateManyMutationInput, MembershipPlanUncheckedUpdateManyInput>
     /**
-     * Filter which Membership_Plans to update
+     * Filter which MembershipPlans to update
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
-     * Limit how many Membership_Plans to update.
+     * Limit how many MembershipPlans to update.
      */
     limit?: number
   }
 
   /**
-   * Membership_Plan updateManyAndReturn
+   * MembershipPlan updateManyAndReturn
    */
-  export type Membership_PlanUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: MembershipPlanSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
-     * The data used to update Membership_Plans.
+     * The data used to update MembershipPlans.
      */
-    data: XOR<Membership_PlanUpdateManyMutationInput, Membership_PlanUncheckedUpdateManyInput>
+    data: XOR<MembershipPlanUpdateManyMutationInput, MembershipPlanUncheckedUpdateManyInput>
     /**
-     * Filter which Membership_Plans to update
+     * Filter which MembershipPlans to update
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
-     * Limit how many Membership_Plans to update.
+     * Limit how many MembershipPlans to update.
      */
     limit?: number
   }
 
   /**
-   * Membership_Plan upsert
+   * MembershipPlan upsert
    */
-  export type Membership_PlanUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * The filter to search for the Membership_Plan to update in case it exists.
+     * The filter to search for the MembershipPlan to update in case it exists.
      */
-    where: Membership_PlanWhereUniqueInput
+    where: MembershipPlanWhereUniqueInput
     /**
-     * In case the Membership_Plan found by the `where` argument doesn't exist, create a new Membership_Plan with this data.
+     * In case the MembershipPlan found by the `where` argument doesn't exist, create a new MembershipPlan with this data.
      */
-    create: XOR<Membership_PlanCreateInput, Membership_PlanUncheckedCreateInput>
+    create: XOR<MembershipPlanCreateInput, MembershipPlanUncheckedCreateInput>
     /**
-     * In case the Membership_Plan was found with the provided `where` argument, update it with this data.
+     * In case the MembershipPlan was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Membership_PlanUpdateInput, Membership_PlanUncheckedUpdateInput>
+    update: XOR<MembershipPlanUpdateInput, MembershipPlanUncheckedUpdateInput>
   }
 
   /**
-   * Membership_Plan delete
+   * MembershipPlan delete
    */
-  export type Membership_PlanDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
     /**
-     * Filter which Membership_Plan to delete.
+     * Filter which MembershipPlan to delete.
      */
-    where: Membership_PlanWhereUniqueInput
+    where: MembershipPlanWhereUniqueInput
   }
 
   /**
-   * Membership_Plan deleteMany
+   * MembershipPlan deleteMany
    */
-  export type Membership_PlanDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Membership_Plans to delete
+     * Filter which MembershipPlans to delete
      */
-    where?: Membership_PlanWhereInput
+    where?: MembershipPlanWhereInput
     /**
-     * Limit how many Membership_Plans to delete.
+     * Limit how many MembershipPlans to delete.
      */
     limit?: number
   }
 
   /**
-   * Membership_Plan.subscriptions
+   * MembershipPlan.subscriptions
    */
-  export type Membership_Plan$subscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlan$subscriptionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Subscription
      */
@@ -4813,21 +4852,21 @@ export namespace Prisma {
   }
 
   /**
-   * Membership_Plan without action
+   * MembershipPlan without action
    */
-  export type Membership_PlanDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MembershipPlanDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Membership_Plan
+     * Select specific fields to fetch from the MembershipPlan
      */
-    select?: Membership_PlanSelect<ExtArgs> | null
+    select?: MembershipPlanSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Membership_Plan
+     * Omit specific fields from the MembershipPlan
      */
-    omit?: Membership_PlanOmit<ExtArgs> | null
+    omit?: MembershipPlanOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Membership_PlanInclude<ExtArgs> | null
+    include?: MembershipPlanInclude<ExtArgs> | null
   }
 
 
@@ -4848,6 +4887,7 @@ export namespace Prisma {
     start_date: Date | null
     end_date: Date | null
     status: $Enums.Status | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -4859,6 +4899,7 @@ export namespace Prisma {
     start_date: Date | null
     end_date: Date | null
     status: $Enums.Status | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -4870,6 +4911,7 @@ export namespace Prisma {
     start_date: number
     end_date: number
     status: number
+    isDeleted: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -4883,6 +4925,7 @@ export namespace Prisma {
     start_date?: true
     end_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -4894,6 +4937,7 @@ export namespace Prisma {
     start_date?: true
     end_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -4905,6 +4949,7 @@ export namespace Prisma {
     start_date?: true
     end_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -4989,6 +5034,7 @@ export namespace Prisma {
     start_date: Date
     end_date: Date
     status: $Enums.Status
+    isDeleted: boolean
     createdAt: Date
     updatedAt: Date
     _count: SubscriptionCountAggregateOutputType | null
@@ -5017,10 +5063,11 @@ export namespace Prisma {
     start_date?: boolean
     end_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["subscription"]>
 
   export type SubscriptionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5030,10 +5077,11 @@ export namespace Prisma {
     start_date?: boolean
     end_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["subscription"]>
 
   export type SubscriptionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5043,10 +5091,11 @@ export namespace Prisma {
     start_date?: boolean
     end_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["subscription"]>
 
   export type SubscriptionSelectScalar = {
@@ -5056,29 +5105,30 @@ export namespace Prisma {
     start_date?: boolean
     end_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SubscriptionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "member_id" | "plan_id" | "start_date" | "end_date" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["subscription"]>
+  export type SubscriptionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "member_id" | "plan_id" | "start_date" | "end_date" | "status" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["subscription"]>
   export type SubscriptionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }
   export type SubscriptionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }
   export type SubscriptionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
-    plan?: boolean | Membership_PlanDefaultArgs<ExtArgs>
+    plan?: boolean | MembershipPlanDefaultArgs<ExtArgs>
   }
 
   export type $SubscriptionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Subscription"
     objects: {
       member: Prisma.$MemberPayload<ExtArgs>
-      plan: Prisma.$Membership_PlanPayload<ExtArgs>
+      plan: Prisma.$MembershipPlanPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -5087,6 +5137,7 @@ export namespace Prisma {
       start_date: Date
       end_date: Date
       status: $Enums.Status
+      isDeleted: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["subscription"]>
@@ -5484,7 +5535,7 @@ export namespace Prisma {
   export interface Prisma__SubscriptionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     member<T extends MemberDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MemberDefaultArgs<ExtArgs>>): Prisma__MemberClient<$Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    plan<T extends Membership_PlanDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Membership_PlanDefaultArgs<ExtArgs>>): Prisma__Membership_PlanClient<$Result.GetResult<Prisma.$Membership_PlanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    plan<T extends MembershipPlanDefaultArgs<ExtArgs> = {}>(args?: Subset<T, MembershipPlanDefaultArgs<ExtArgs>>): Prisma__MembershipPlanClient<$Result.GetResult<Prisma.$MembershipPlanPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5520,6 +5571,7 @@ export namespace Prisma {
     readonly start_date: FieldRef<"Subscription", 'DateTime'>
     readonly end_date: FieldRef<"Subscription", 'DateTime'>
     readonly status: FieldRef<"Subscription", 'Status'>
+    readonly isDeleted: FieldRef<"Subscription", 'Boolean'>
     readonly createdAt: FieldRef<"Subscription", 'DateTime'>
     readonly updatedAt: FieldRef<"Subscription", 'DateTime'>
   }
@@ -5960,9 +6012,10 @@ export namespace Prisma {
     id: string | null
     subscription_id: string | null
     amount_paid: number | null
-    payment_method: $Enums.Payment_Method | null
+    payment_method: $Enums.PaymentMethod | null
     payment_date: Date | null
-    status: $Enums.Payment_Status | null
+    status: $Enums.PaymentStatus | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5971,9 +6024,10 @@ export namespace Prisma {
     id: string | null
     subscription_id: string | null
     amount_paid: number | null
-    payment_method: $Enums.Payment_Method | null
+    payment_method: $Enums.PaymentMethod | null
     payment_date: Date | null
-    status: $Enums.Payment_Status | null
+    status: $Enums.PaymentStatus | null
+    isDeleted: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5985,6 +6039,7 @@ export namespace Prisma {
     payment_method: number
     payment_date: number
     status: number
+    isDeleted: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -6006,6 +6061,7 @@ export namespace Prisma {
     payment_method?: true
     payment_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -6017,6 +6073,7 @@ export namespace Prisma {
     payment_method?: true
     payment_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -6028,6 +6085,7 @@ export namespace Prisma {
     payment_method?: true
     payment_date?: true
     status?: true
+    isDeleted?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -6123,9 +6181,10 @@ export namespace Prisma {
     id: string
     subscription_id: string
     amount_paid: number
-    payment_method: $Enums.Payment_Method
+    payment_method: $Enums.PaymentMethod
     payment_date: Date
-    status: $Enums.Payment_Status
+    status: $Enums.PaymentStatus
+    isDeleted: boolean
     createdAt: Date
     updatedAt: Date
     _count: PaymentCountAggregateOutputType | null
@@ -6156,6 +6215,7 @@ export namespace Prisma {
     payment_method?: boolean
     payment_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["payment"]>
@@ -6167,6 +6227,7 @@ export namespace Prisma {
     payment_method?: boolean
     payment_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["payment"]>
@@ -6178,6 +6239,7 @@ export namespace Prisma {
     payment_method?: boolean
     payment_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["payment"]>
@@ -6189,11 +6251,12 @@ export namespace Prisma {
     payment_method?: boolean
     payment_date?: boolean
     status?: boolean
+    isDeleted?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type PaymentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "subscription_id" | "amount_paid" | "payment_method" | "payment_date" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["payment"]>
+  export type PaymentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "subscription_id" | "amount_paid" | "payment_method" | "payment_date" | "status" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["payment"]>
 
   export type $PaymentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Payment"
@@ -6202,9 +6265,10 @@ export namespace Prisma {
       id: string
       subscription_id: string
       amount_paid: number
-      payment_method: $Enums.Payment_Method
+      payment_method: $Enums.PaymentMethod
       payment_date: Date
-      status: $Enums.Payment_Status
+      status: $Enums.PaymentStatus
+      isDeleted: boolean
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["payment"]>
@@ -6633,9 +6697,10 @@ export namespace Prisma {
     readonly id: FieldRef<"Payment", 'String'>
     readonly subscription_id: FieldRef<"Payment", 'String'>
     readonly amount_paid: FieldRef<"Payment", 'Int'>
-    readonly payment_method: FieldRef<"Payment", 'Payment_Method'>
+    readonly payment_method: FieldRef<"Payment", 'PaymentMethod'>
     readonly payment_date: FieldRef<"Payment", 'DateTime'>
-    readonly status: FieldRef<"Payment", 'Payment_Status'>
+    readonly status: FieldRef<"Payment", 'PaymentStatus'>
+    readonly isDeleted: FieldRef<"Payment", 'Boolean'>
     readonly createdAt: FieldRef<"Payment", 'DateTime'>
     readonly updatedAt: FieldRef<"Payment", 'DateTime'>
   }
@@ -7018,18 +7083,27 @@ export namespace Prisma {
     id: string | null
     member_id: string | null
     check_in_time: Date | null
+    isDeleted: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type AttendanceMaxAggregateOutputType = {
     id: string | null
     member_id: string | null
     check_in_time: Date | null
+    isDeleted: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type AttendanceCountAggregateOutputType = {
     id: number
     member_id: number
     check_in_time: number
+    isDeleted: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -7038,18 +7112,27 @@ export namespace Prisma {
     id?: true
     member_id?: true
     check_in_time?: true
+    isDeleted?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type AttendanceMaxAggregateInputType = {
     id?: true
     member_id?: true
     check_in_time?: true
+    isDeleted?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type AttendanceCountAggregateInputType = {
     id?: true
     member_id?: true
     check_in_time?: true
+    isDeleted?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -7129,6 +7212,9 @@ export namespace Prisma {
     id: string
     member_id: string
     check_in_time: Date
+    isDeleted: boolean
+    createdAt: Date
+    updatedAt: Date
     _count: AttendanceCountAggregateOutputType | null
     _min: AttendanceMinAggregateOutputType | null
     _max: AttendanceMaxAggregateOutputType | null
@@ -7152,6 +7238,9 @@ export namespace Prisma {
     id?: boolean
     member_id?: boolean
     check_in_time?: boolean
+    isDeleted?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["attendance"]>
 
@@ -7159,6 +7248,9 @@ export namespace Prisma {
     id?: boolean
     member_id?: boolean
     check_in_time?: boolean
+    isDeleted?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["attendance"]>
 
@@ -7166,6 +7258,9 @@ export namespace Prisma {
     id?: boolean
     member_id?: boolean
     check_in_time?: boolean
+    isDeleted?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     member?: boolean | MemberDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["attendance"]>
 
@@ -7173,9 +7268,12 @@ export namespace Prisma {
     id?: boolean
     member_id?: boolean
     check_in_time?: boolean
+    isDeleted?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type AttendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "member_id" | "check_in_time", ExtArgs["result"]["attendance"]>
+  export type AttendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "member_id" | "check_in_time" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["attendance"]>
   export type AttendanceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     member?: boolean | MemberDefaultArgs<ExtArgs>
   }
@@ -7195,6 +7293,9 @@ export namespace Prisma {
       id: string
       member_id: string
       check_in_time: Date
+      isDeleted: boolean
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["attendance"]>
     composites: {}
   }
@@ -7622,6 +7723,9 @@ export namespace Prisma {
     readonly id: FieldRef<"Attendance", 'String'>
     readonly member_id: FieldRef<"Attendance", 'String'>
     readonly check_in_time: FieldRef<"Attendance", 'DateTime'>
+    readonly isDeleted: FieldRef<"Attendance", 'Boolean'>
+    readonly createdAt: FieldRef<"Attendance", 'DateTime'>
+    readonly updatedAt: FieldRef<"Attendance", 'DateTime'>
   }
     
 
@@ -8056,6 +8160,7 @@ export namespace Prisma {
     password: 'password',
     username: 'username',
     role: 'role',
+    isDeleted: 'isDeleted',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8071,6 +8176,7 @@ export namespace Prisma {
     address: 'address',
     gender: 'gender',
     join_date: 'join_date',
+    isDeleted: 'isDeleted',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8078,16 +8184,17 @@ export namespace Prisma {
   export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
 
 
-  export const Membership_PlanScalarFieldEnum: {
+  export const MembershipPlanScalarFieldEnum: {
     id: 'id',
     name: 'name',
     duration_days: 'duration_days',
     price: 'price',
+    isDeleted: 'isDeleted',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
-  export type Membership_PlanScalarFieldEnum = (typeof Membership_PlanScalarFieldEnum)[keyof typeof Membership_PlanScalarFieldEnum]
+  export type MembershipPlanScalarFieldEnum = (typeof MembershipPlanScalarFieldEnum)[keyof typeof MembershipPlanScalarFieldEnum]
 
 
   export const SubscriptionScalarFieldEnum: {
@@ -8097,6 +8204,7 @@ export namespace Prisma {
     start_date: 'start_date',
     end_date: 'end_date',
     status: 'status',
+    isDeleted: 'isDeleted',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8111,6 +8219,7 @@ export namespace Prisma {
     payment_method: 'payment_method',
     payment_date: 'payment_date',
     status: 'status',
+    isDeleted: 'isDeleted',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8121,7 +8230,10 @@ export namespace Prisma {
   export const AttendanceScalarFieldEnum: {
     id: 'id',
     member_id: 'member_id',
-    check_in_time: 'check_in_time'
+    check_in_time: 'check_in_time',
+    isDeleted: 'isDeleted',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type AttendanceScalarFieldEnum = (typeof AttendanceScalarFieldEnum)[keyof typeof AttendanceScalarFieldEnum]
@@ -8173,6 +8285,13 @@ export namespace Prisma {
    * Reference to a field of type 'Role[]'
    */
   export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -8233,30 +8352,30 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Payment_Method'
+   * Reference to a field of type 'PaymentMethod'
    */
-  export type EnumPayment_MethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Payment_Method'>
+  export type EnumPaymentMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentMethod'>
     
 
 
   /**
-   * Reference to a field of type 'Payment_Method[]'
+   * Reference to a field of type 'PaymentMethod[]'
    */
-  export type ListEnumPayment_MethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Payment_Method[]'>
+  export type ListEnumPaymentMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentMethod[]'>
     
 
 
   /**
-   * Reference to a field of type 'Payment_Status'
+   * Reference to a field of type 'PaymentStatus'
    */
-  export type EnumPayment_StatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Payment_Status'>
+  export type EnumPaymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentStatus'>
     
 
 
   /**
-   * Reference to a field of type 'Payment_Status[]'
+   * Reference to a field of type 'PaymentStatus[]'
    */
-  export type ListEnumPayment_StatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Payment_Status[]'>
+  export type ListEnumPaymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentStatus[]'>
     
 
 
@@ -8286,6 +8405,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     username?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
+    isDeleted?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
@@ -8297,6 +8417,7 @@ export namespace Prisma {
     password?: SortOrder
     username?: SortOrder
     role?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     member?: MemberOrderByWithRelationInput
@@ -8311,6 +8432,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     username?: StringFilter<"User"> | string
     role?: EnumRoleFilter<"User"> | $Enums.Role
+    isDeleted?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     member?: XOR<MemberNullableScalarRelationFilter, MemberWhereInput> | null
@@ -8322,6 +8444,7 @@ export namespace Prisma {
     password?: SortOrder
     username?: SortOrder
     role?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: UserCountOrderByAggregateInput
@@ -8338,6 +8461,7 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
     username?: StringWithAggregatesFilter<"User"> | string
     role?: EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
+    isDeleted?: BoolWithAggregatesFilter<"User"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
   }
@@ -8353,6 +8477,7 @@ export namespace Prisma {
     address?: StringFilter<"Member"> | string
     gender?: EnumGenderFilter<"Member"> | $Enums.Gender
     join_date?: DateTimeFilter<"Member"> | Date | string
+    isDeleted?: BoolFilter<"Member"> | boolean
     createdAt?: DateTimeFilter<"Member"> | Date | string
     updatedAt?: DateTimeFilter<"Member"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8368,6 +8493,7 @@ export namespace Prisma {
     address?: SortOrder
     gender?: SortOrder
     join_date?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -8386,6 +8512,7 @@ export namespace Prisma {
     address?: StringFilter<"Member"> | string
     gender?: EnumGenderFilter<"Member"> | $Enums.Gender
     join_date?: DateTimeFilter<"Member"> | Date | string
+    isDeleted?: BoolFilter<"Member"> | boolean
     createdAt?: DateTimeFilter<"Member"> | Date | string
     updatedAt?: DateTimeFilter<"Member"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -8401,6 +8528,7 @@ export namespace Prisma {
     address?: SortOrder
     gender?: SortOrder
     join_date?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: MemberCountOrderByAggregateInput
@@ -8419,70 +8547,76 @@ export namespace Prisma {
     address?: StringWithAggregatesFilter<"Member"> | string
     gender?: EnumGenderWithAggregatesFilter<"Member"> | $Enums.Gender
     join_date?: DateTimeWithAggregatesFilter<"Member"> | Date | string
+    isDeleted?: BoolWithAggregatesFilter<"Member"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Member"> | Date | string
   }
 
-  export type Membership_PlanWhereInput = {
-    AND?: Membership_PlanWhereInput | Membership_PlanWhereInput[]
-    OR?: Membership_PlanWhereInput[]
-    NOT?: Membership_PlanWhereInput | Membership_PlanWhereInput[]
-    id?: StringFilter<"Membership_Plan"> | string
-    name?: StringFilter<"Membership_Plan"> | string
-    duration_days?: IntFilter<"Membership_Plan"> | number
-    price?: IntFilter<"Membership_Plan"> | number
-    createdAt?: DateTimeFilter<"Membership_Plan"> | Date | string
-    updatedAt?: DateTimeFilter<"Membership_Plan"> | Date | string
+  export type MembershipPlanWhereInput = {
+    AND?: MembershipPlanWhereInput | MembershipPlanWhereInput[]
+    OR?: MembershipPlanWhereInput[]
+    NOT?: MembershipPlanWhereInput | MembershipPlanWhereInput[]
+    id?: StringFilter<"MembershipPlan"> | string
+    name?: StringFilter<"MembershipPlan"> | string
+    duration_days?: IntFilter<"MembershipPlan"> | number
+    price?: IntFilter<"MembershipPlan"> | number
+    isDeleted?: BoolFilter<"MembershipPlan"> | boolean
+    createdAt?: DateTimeFilter<"MembershipPlan"> | Date | string
+    updatedAt?: DateTimeFilter<"MembershipPlan"> | Date | string
     subscriptions?: SubscriptionListRelationFilter
   }
 
-  export type Membership_PlanOrderByWithRelationInput = {
+  export type MembershipPlanOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     duration_days?: SortOrder
     price?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     subscriptions?: SubscriptionOrderByRelationAggregateInput
   }
 
-  export type Membership_PlanWhereUniqueInput = Prisma.AtLeast<{
+  export type MembershipPlanWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: Membership_PlanWhereInput | Membership_PlanWhereInput[]
-    OR?: Membership_PlanWhereInput[]
-    NOT?: Membership_PlanWhereInput | Membership_PlanWhereInput[]
-    name?: StringFilter<"Membership_Plan"> | string
-    duration_days?: IntFilter<"Membership_Plan"> | number
-    price?: IntFilter<"Membership_Plan"> | number
-    createdAt?: DateTimeFilter<"Membership_Plan"> | Date | string
-    updatedAt?: DateTimeFilter<"Membership_Plan"> | Date | string
+    AND?: MembershipPlanWhereInput | MembershipPlanWhereInput[]
+    OR?: MembershipPlanWhereInput[]
+    NOT?: MembershipPlanWhereInput | MembershipPlanWhereInput[]
+    name?: StringFilter<"MembershipPlan"> | string
+    duration_days?: IntFilter<"MembershipPlan"> | number
+    price?: IntFilter<"MembershipPlan"> | number
+    isDeleted?: BoolFilter<"MembershipPlan"> | boolean
+    createdAt?: DateTimeFilter<"MembershipPlan"> | Date | string
+    updatedAt?: DateTimeFilter<"MembershipPlan"> | Date | string
     subscriptions?: SubscriptionListRelationFilter
   }, "id">
 
-  export type Membership_PlanOrderByWithAggregationInput = {
+  export type MembershipPlanOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     duration_days?: SortOrder
     price?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: Membership_PlanCountOrderByAggregateInput
-    _avg?: Membership_PlanAvgOrderByAggregateInput
-    _max?: Membership_PlanMaxOrderByAggregateInput
-    _min?: Membership_PlanMinOrderByAggregateInput
-    _sum?: Membership_PlanSumOrderByAggregateInput
+    _count?: MembershipPlanCountOrderByAggregateInput
+    _avg?: MembershipPlanAvgOrderByAggregateInput
+    _max?: MembershipPlanMaxOrderByAggregateInput
+    _min?: MembershipPlanMinOrderByAggregateInput
+    _sum?: MembershipPlanSumOrderByAggregateInput
   }
 
-  export type Membership_PlanScalarWhereWithAggregatesInput = {
-    AND?: Membership_PlanScalarWhereWithAggregatesInput | Membership_PlanScalarWhereWithAggregatesInput[]
-    OR?: Membership_PlanScalarWhereWithAggregatesInput[]
-    NOT?: Membership_PlanScalarWhereWithAggregatesInput | Membership_PlanScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Membership_Plan"> | string
-    name?: StringWithAggregatesFilter<"Membership_Plan"> | string
-    duration_days?: IntWithAggregatesFilter<"Membership_Plan"> | number
-    price?: IntWithAggregatesFilter<"Membership_Plan"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"Membership_Plan"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Membership_Plan"> | Date | string
+  export type MembershipPlanScalarWhereWithAggregatesInput = {
+    AND?: MembershipPlanScalarWhereWithAggregatesInput | MembershipPlanScalarWhereWithAggregatesInput[]
+    OR?: MembershipPlanScalarWhereWithAggregatesInput[]
+    NOT?: MembershipPlanScalarWhereWithAggregatesInput | MembershipPlanScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"MembershipPlan"> | string
+    name?: StringWithAggregatesFilter<"MembershipPlan"> | string
+    duration_days?: IntWithAggregatesFilter<"MembershipPlan"> | number
+    price?: IntWithAggregatesFilter<"MembershipPlan"> | number
+    isDeleted?: BoolWithAggregatesFilter<"MembershipPlan"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"MembershipPlan"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"MembershipPlan"> | Date | string
   }
 
   export type SubscriptionWhereInput = {
@@ -8495,10 +8629,11 @@ export namespace Prisma {
     start_date?: DateTimeFilter<"Subscription"> | Date | string
     end_date?: DateTimeFilter<"Subscription"> | Date | string
     status?: EnumStatusFilter<"Subscription"> | $Enums.Status
+    isDeleted?: BoolFilter<"Subscription"> | boolean
     createdAt?: DateTimeFilter<"Subscription"> | Date | string
     updatedAt?: DateTimeFilter<"Subscription"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-    plan?: XOR<Membership_PlanScalarRelationFilter, Membership_PlanWhereInput>
+    plan?: XOR<MembershipPlanScalarRelationFilter, MembershipPlanWhereInput>
   }
 
   export type SubscriptionOrderByWithRelationInput = {
@@ -8508,10 +8643,11 @@ export namespace Prisma {
     start_date?: SortOrder
     end_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     member?: MemberOrderByWithRelationInput
-    plan?: Membership_PlanOrderByWithRelationInput
+    plan?: MembershipPlanOrderByWithRelationInput
   }
 
   export type SubscriptionWhereUniqueInput = Prisma.AtLeast<{
@@ -8524,10 +8660,11 @@ export namespace Prisma {
     start_date?: DateTimeFilter<"Subscription"> | Date | string
     end_date?: DateTimeFilter<"Subscription"> | Date | string
     status?: EnumStatusFilter<"Subscription"> | $Enums.Status
+    isDeleted?: BoolFilter<"Subscription"> | boolean
     createdAt?: DateTimeFilter<"Subscription"> | Date | string
     updatedAt?: DateTimeFilter<"Subscription"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
-    plan?: XOR<Membership_PlanScalarRelationFilter, Membership_PlanWhereInput>
+    plan?: XOR<MembershipPlanScalarRelationFilter, MembershipPlanWhereInput>
   }, "id">
 
   export type SubscriptionOrderByWithAggregationInput = {
@@ -8537,6 +8674,7 @@ export namespace Prisma {
     start_date?: SortOrder
     end_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: SubscriptionCountOrderByAggregateInput
@@ -8554,6 +8692,7 @@ export namespace Prisma {
     start_date?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
     end_date?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
     status?: EnumStatusWithAggregatesFilter<"Subscription"> | $Enums.Status
+    isDeleted?: BoolWithAggregatesFilter<"Subscription"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
   }
@@ -8565,9 +8704,10 @@ export namespace Prisma {
     id?: StringFilter<"Payment"> | string
     subscription_id?: StringFilter<"Payment"> | string
     amount_paid?: IntFilter<"Payment"> | number
-    payment_method?: EnumPayment_MethodFilter<"Payment"> | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFilter<"Payment"> | $Enums.PaymentMethod
     payment_date?: DateTimeFilter<"Payment"> | Date | string
-    status?: EnumPayment_StatusFilter<"Payment"> | $Enums.Payment_Status
+    status?: EnumPaymentStatusFilter<"Payment"> | $Enums.PaymentStatus
+    isDeleted?: BoolFilter<"Payment"> | boolean
     createdAt?: DateTimeFilter<"Payment"> | Date | string
     updatedAt?: DateTimeFilter<"Payment"> | Date | string
   }
@@ -8579,6 +8719,7 @@ export namespace Prisma {
     payment_method?: SortOrder
     payment_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -8590,9 +8731,10 @@ export namespace Prisma {
     NOT?: PaymentWhereInput | PaymentWhereInput[]
     subscription_id?: StringFilter<"Payment"> | string
     amount_paid?: IntFilter<"Payment"> | number
-    payment_method?: EnumPayment_MethodFilter<"Payment"> | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFilter<"Payment"> | $Enums.PaymentMethod
     payment_date?: DateTimeFilter<"Payment"> | Date | string
-    status?: EnumPayment_StatusFilter<"Payment"> | $Enums.Payment_Status
+    status?: EnumPaymentStatusFilter<"Payment"> | $Enums.PaymentStatus
+    isDeleted?: BoolFilter<"Payment"> | boolean
     createdAt?: DateTimeFilter<"Payment"> | Date | string
     updatedAt?: DateTimeFilter<"Payment"> | Date | string
   }, "id">
@@ -8604,6 +8746,7 @@ export namespace Prisma {
     payment_method?: SortOrder
     payment_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: PaymentCountOrderByAggregateInput
@@ -8620,9 +8763,10 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Payment"> | string
     subscription_id?: StringWithAggregatesFilter<"Payment"> | string
     amount_paid?: IntWithAggregatesFilter<"Payment"> | number
-    payment_method?: EnumPayment_MethodWithAggregatesFilter<"Payment"> | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodWithAggregatesFilter<"Payment"> | $Enums.PaymentMethod
     payment_date?: DateTimeWithAggregatesFilter<"Payment"> | Date | string
-    status?: EnumPayment_StatusWithAggregatesFilter<"Payment"> | $Enums.Payment_Status
+    status?: EnumPaymentStatusWithAggregatesFilter<"Payment"> | $Enums.PaymentStatus
+    isDeleted?: BoolWithAggregatesFilter<"Payment"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Payment"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Payment"> | Date | string
   }
@@ -8634,6 +8778,9 @@ export namespace Prisma {
     id?: StringFilter<"Attendance"> | string
     member_id?: StringFilter<"Attendance"> | string
     check_in_time?: DateTimeFilter<"Attendance"> | Date | string
+    isDeleted?: BoolFilter<"Attendance"> | boolean
+    createdAt?: DateTimeFilter<"Attendance"> | Date | string
+    updatedAt?: DateTimeFilter<"Attendance"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
   }
 
@@ -8641,6 +8788,9 @@ export namespace Prisma {
     id?: SortOrder
     member_id?: SortOrder
     check_in_time?: SortOrder
+    isDeleted?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     member?: MemberOrderByWithRelationInput
   }
 
@@ -8651,6 +8801,9 @@ export namespace Prisma {
     NOT?: AttendanceWhereInput | AttendanceWhereInput[]
     member_id?: StringFilter<"Attendance"> | string
     check_in_time?: DateTimeFilter<"Attendance"> | Date | string
+    isDeleted?: BoolFilter<"Attendance"> | boolean
+    createdAt?: DateTimeFilter<"Attendance"> | Date | string
+    updatedAt?: DateTimeFilter<"Attendance"> | Date | string
     member?: XOR<MemberScalarRelationFilter, MemberWhereInput>
   }, "id">
 
@@ -8658,6 +8811,9 @@ export namespace Prisma {
     id?: SortOrder
     member_id?: SortOrder
     check_in_time?: SortOrder
+    isDeleted?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: AttendanceCountOrderByAggregateInput
     _max?: AttendanceMaxOrderByAggregateInput
     _min?: AttendanceMinOrderByAggregateInput
@@ -8670,6 +8826,9 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Attendance"> | string
     member_id?: StringWithAggregatesFilter<"Attendance"> | string
     check_in_time?: DateTimeWithAggregatesFilter<"Attendance"> | Date | string
+    isDeleted?: BoolWithAggregatesFilter<"Attendance"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Attendance"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Attendance"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -8678,6 +8837,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     member?: MemberCreateNestedOneWithoutUserInput
@@ -8689,6 +8849,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     member?: MemberUncheckedCreateNestedOneWithoutUserInput
@@ -8700,6 +8861,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     member?: MemberUpdateOneWithoutUserNestedInput
@@ -8711,6 +8873,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     member?: MemberUncheckedUpdateOneWithoutUserNestedInput
@@ -8722,6 +8885,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8732,6 +8896,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8742,6 +8907,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8753,6 +8919,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutMemberInput
@@ -8768,6 +8935,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutMemberInput
@@ -8781,6 +8949,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutMemberNestedInput
@@ -8796,6 +8965,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutMemberNestedInput
@@ -8810,6 +8980,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8821,6 +8992,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8833,73 +9005,81 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type Membership_PlanCreateInput = {
+  export type MembershipPlanCreateInput = {
     id?: string
     name: string
     duration_days: number
     price: number
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionCreateNestedManyWithoutPlanInput
   }
 
-  export type Membership_PlanUncheckedCreateInput = {
+  export type MembershipPlanUncheckedCreateInput = {
     id?: string
     name: string
     duration_days: number
     price: number
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutPlanInput
   }
 
-  export type Membership_PlanUpdateInput = {
+  export type MembershipPlanUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUpdateManyWithoutPlanNestedInput
   }
 
-  export type Membership_PlanUncheckedUpdateInput = {
+  export type MembershipPlanUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutPlanNestedInput
   }
 
-  export type Membership_PlanCreateManyInput = {
+  export type MembershipPlanCreateManyInput = {
     id?: string
     name: string
     duration_days: number
     price: number
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type Membership_PlanUpdateManyMutationInput = {
+  export type MembershipPlanUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type Membership_PlanUncheckedUpdateManyInput = {
+  export type MembershipPlanUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8909,10 +9089,11 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     member: MemberCreateNestedOneWithoutSubscriptionsInput
-    plan: Membership_PlanCreateNestedOneWithoutSubscriptionsInput
+    plan: MembershipPlanCreateNestedOneWithoutSubscriptionsInput
   }
 
   export type SubscriptionUncheckedCreateInput = {
@@ -8922,6 +9103,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8931,10 +9113,11 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     member?: MemberUpdateOneRequiredWithoutSubscriptionsNestedInput
-    plan?: Membership_PlanUpdateOneRequiredWithoutSubscriptionsNestedInput
+    plan?: MembershipPlanUpdateOneRequiredWithoutSubscriptionsNestedInput
   }
 
   export type SubscriptionUncheckedUpdateInput = {
@@ -8944,6 +9127,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8955,6 +9139,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8964,6 +9149,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8975,6 +9161,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8983,9 +9170,10 @@ export namespace Prisma {
     id?: string
     subscription_id: string
     amount_paid: number
-    payment_method: $Enums.Payment_Method
+    payment_method: $Enums.PaymentMethod
     payment_date?: Date | string
-    status: $Enums.Payment_Status
+    status: $Enums.PaymentStatus
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -8994,9 +9182,10 @@ export namespace Prisma {
     id?: string
     subscription_id: string
     amount_paid: number
-    payment_method: $Enums.Payment_Method
+    payment_method: $Enums.PaymentMethod
     payment_date?: Date | string
-    status: $Enums.Payment_Status
+    status: $Enums.PaymentStatus
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9005,9 +9194,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     subscription_id?: StringFieldUpdateOperationsInput | string
     amount_paid?: IntFieldUpdateOperationsInput | number
-    payment_method?: EnumPayment_MethodFieldUpdateOperationsInput | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     payment_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: EnumPayment_StatusFieldUpdateOperationsInput | $Enums.Payment_Status
+    status?: EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9016,9 +9206,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     subscription_id?: StringFieldUpdateOperationsInput | string
     amount_paid?: IntFieldUpdateOperationsInput | number
-    payment_method?: EnumPayment_MethodFieldUpdateOperationsInput | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     payment_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: EnumPayment_StatusFieldUpdateOperationsInput | $Enums.Payment_Status
+    status?: EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9027,9 +9218,10 @@ export namespace Prisma {
     id?: string
     subscription_id: string
     amount_paid: number
-    payment_method: $Enums.Payment_Method
+    payment_method: $Enums.PaymentMethod
     payment_date?: Date | string
-    status: $Enums.Payment_Status
+    status: $Enums.PaymentStatus
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9038,9 +9230,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     subscription_id?: StringFieldUpdateOperationsInput | string
     amount_paid?: IntFieldUpdateOperationsInput | number
-    payment_method?: EnumPayment_MethodFieldUpdateOperationsInput | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     payment_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: EnumPayment_StatusFieldUpdateOperationsInput | $Enums.Payment_Status
+    status?: EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9049,9 +9242,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     subscription_id?: StringFieldUpdateOperationsInput | string
     amount_paid?: IntFieldUpdateOperationsInput | number
-    payment_method?: EnumPayment_MethodFieldUpdateOperationsInput | $Enums.Payment_Method
+    payment_method?: EnumPaymentMethodFieldUpdateOperationsInput | $Enums.PaymentMethod
     payment_date?: DateTimeFieldUpdateOperationsInput | Date | string
-    status?: EnumPayment_StatusFieldUpdateOperationsInput | $Enums.Payment_Status
+    status?: EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9059,6 +9253,9 @@ export namespace Prisma {
   export type AttendanceCreateInput = {
     id?: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     member: MemberCreateNestedOneWithoutAttendancesInput
   }
 
@@ -9066,11 +9263,17 @@ export namespace Prisma {
     id?: string
     member_id: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AttendanceUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     member?: MemberUpdateOneRequiredWithoutAttendancesNestedInput
   }
 
@@ -9078,23 +9281,35 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     member_id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AttendanceCreateManyInput = {
     id?: string
     member_id: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AttendanceUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AttendanceUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     member_id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -9119,6 +9334,11 @@ export namespace Prisma {
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -9141,6 +9361,7 @@ export namespace Prisma {
     password?: SortOrder
     username?: SortOrder
     role?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9151,6 +9372,7 @@ export namespace Prisma {
     password?: SortOrder
     username?: SortOrder
     role?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9161,6 +9383,7 @@ export namespace Prisma {
     password?: SortOrder
     username?: SortOrder
     role?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9191,6 +9414,14 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
     _max?: NestedEnumRoleFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -9247,6 +9478,7 @@ export namespace Prisma {
     address?: SortOrder
     gender?: SortOrder
     join_date?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9259,6 +9491,7 @@ export namespace Prisma {
     address?: SortOrder
     gender?: SortOrder
     join_date?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9271,6 +9504,7 @@ export namespace Prisma {
     address?: SortOrder
     gender?: SortOrder
     join_date?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9296,39 +9530,42 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type Membership_PlanCountOrderByAggregateInput = {
+  export type MembershipPlanCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     duration_days?: SortOrder
     price?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type Membership_PlanAvgOrderByAggregateInput = {
+  export type MembershipPlanAvgOrderByAggregateInput = {
     duration_days?: SortOrder
     price?: SortOrder
   }
 
-  export type Membership_PlanMaxOrderByAggregateInput = {
+  export type MembershipPlanMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     duration_days?: SortOrder
     price?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type Membership_PlanMinOrderByAggregateInput = {
+  export type MembershipPlanMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     duration_days?: SortOrder
     price?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type Membership_PlanSumOrderByAggregateInput = {
+  export type MembershipPlanSumOrderByAggregateInput = {
     duration_days?: SortOrder
     price?: SortOrder
   }
@@ -9361,9 +9598,9 @@ export namespace Prisma {
     isNot?: MemberWhereInput
   }
 
-  export type Membership_PlanScalarRelationFilter = {
-    is?: Membership_PlanWhereInput
-    isNot?: Membership_PlanWhereInput
+  export type MembershipPlanScalarRelationFilter = {
+    is?: MembershipPlanWhereInput
+    isNot?: MembershipPlanWhereInput
   }
 
   export type SubscriptionCountOrderByAggregateInput = {
@@ -9373,6 +9610,7 @@ export namespace Prisma {
     start_date?: SortOrder
     end_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9384,6 +9622,7 @@ export namespace Prisma {
     start_date?: SortOrder
     end_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9395,6 +9634,7 @@ export namespace Prisma {
     start_date?: SortOrder
     end_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9409,18 +9649,18 @@ export namespace Prisma {
     _max?: NestedEnumStatusFilter<$PrismaModel>
   }
 
-  export type EnumPayment_MethodFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Method | EnumPayment_MethodFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_MethodFilter<$PrismaModel> | $Enums.Payment_Method
+  export type EnumPaymentMethodFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentMethodFilter<$PrismaModel> | $Enums.PaymentMethod
   }
 
-  export type EnumPayment_StatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Status | EnumPayment_StatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_StatusFilter<$PrismaModel> | $Enums.Payment_Status
+  export type EnumPaymentStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
   }
 
   export type PaymentCountOrderByAggregateInput = {
@@ -9430,6 +9670,7 @@ export namespace Prisma {
     payment_method?: SortOrder
     payment_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9445,6 +9686,7 @@ export namespace Prisma {
     payment_method?: SortOrder
     payment_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9456,6 +9698,7 @@ export namespace Prisma {
     payment_method?: SortOrder
     payment_date?: SortOrder
     status?: SortOrder
+    isDeleted?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9464,42 +9707,51 @@ export namespace Prisma {
     amount_paid?: SortOrder
   }
 
-  export type EnumPayment_MethodWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Method | EnumPayment_MethodFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_MethodWithAggregatesFilter<$PrismaModel> | $Enums.Payment_Method
+  export type EnumPaymentMethodWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentMethodWithAggregatesFilter<$PrismaModel> | $Enums.PaymentMethod
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumPayment_MethodFilter<$PrismaModel>
-    _max?: NestedEnumPayment_MethodFilter<$PrismaModel>
+    _min?: NestedEnumPaymentMethodFilter<$PrismaModel>
+    _max?: NestedEnumPaymentMethodFilter<$PrismaModel>
   }
 
-  export type EnumPayment_StatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Status | EnumPayment_StatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_StatusWithAggregatesFilter<$PrismaModel> | $Enums.Payment_Status
+  export type EnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.PaymentStatus
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumPayment_StatusFilter<$PrismaModel>
-    _max?: NestedEnumPayment_StatusFilter<$PrismaModel>
+    _min?: NestedEnumPaymentStatusFilter<$PrismaModel>
+    _max?: NestedEnumPaymentStatusFilter<$PrismaModel>
   }
 
   export type AttendanceCountOrderByAggregateInput = {
     id?: SortOrder
     member_id?: SortOrder
     check_in_time?: SortOrder
+    isDeleted?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type AttendanceMaxOrderByAggregateInput = {
     id?: SortOrder
     member_id?: SortOrder
     check_in_time?: SortOrder
+    isDeleted?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type AttendanceMinOrderByAggregateInput = {
     id?: SortOrder
     member_id?: SortOrder
     check_in_time?: SortOrder
+    isDeleted?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type MemberCreateNestedOneWithoutUserInput = {
@@ -9520,6 +9772,10 @@ export namespace Prisma {
 
   export type EnumRoleFieldUpdateOperationsInput = {
     set?: $Enums.Role
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -9704,10 +9960,10 @@ export namespace Prisma {
     connect?: MemberWhereUniqueInput
   }
 
-  export type Membership_PlanCreateNestedOneWithoutSubscriptionsInput = {
-    create?: XOR<Membership_PlanCreateWithoutSubscriptionsInput, Membership_PlanUncheckedCreateWithoutSubscriptionsInput>
-    connectOrCreate?: Membership_PlanCreateOrConnectWithoutSubscriptionsInput
-    connect?: Membership_PlanWhereUniqueInput
+  export type MembershipPlanCreateNestedOneWithoutSubscriptionsInput = {
+    create?: XOR<MembershipPlanCreateWithoutSubscriptionsInput, MembershipPlanUncheckedCreateWithoutSubscriptionsInput>
+    connectOrCreate?: MembershipPlanCreateOrConnectWithoutSubscriptionsInput
+    connect?: MembershipPlanWhereUniqueInput
   }
 
   export type EnumStatusFieldUpdateOperationsInput = {
@@ -9722,20 +9978,20 @@ export namespace Prisma {
     update?: XOR<XOR<MemberUpdateToOneWithWhereWithoutSubscriptionsInput, MemberUpdateWithoutSubscriptionsInput>, MemberUncheckedUpdateWithoutSubscriptionsInput>
   }
 
-  export type Membership_PlanUpdateOneRequiredWithoutSubscriptionsNestedInput = {
-    create?: XOR<Membership_PlanCreateWithoutSubscriptionsInput, Membership_PlanUncheckedCreateWithoutSubscriptionsInput>
-    connectOrCreate?: Membership_PlanCreateOrConnectWithoutSubscriptionsInput
-    upsert?: Membership_PlanUpsertWithoutSubscriptionsInput
-    connect?: Membership_PlanWhereUniqueInput
-    update?: XOR<XOR<Membership_PlanUpdateToOneWithWhereWithoutSubscriptionsInput, Membership_PlanUpdateWithoutSubscriptionsInput>, Membership_PlanUncheckedUpdateWithoutSubscriptionsInput>
+  export type MembershipPlanUpdateOneRequiredWithoutSubscriptionsNestedInput = {
+    create?: XOR<MembershipPlanCreateWithoutSubscriptionsInput, MembershipPlanUncheckedCreateWithoutSubscriptionsInput>
+    connectOrCreate?: MembershipPlanCreateOrConnectWithoutSubscriptionsInput
+    upsert?: MembershipPlanUpsertWithoutSubscriptionsInput
+    connect?: MembershipPlanWhereUniqueInput
+    update?: XOR<XOR<MembershipPlanUpdateToOneWithWhereWithoutSubscriptionsInput, MembershipPlanUpdateWithoutSubscriptionsInput>, MembershipPlanUncheckedUpdateWithoutSubscriptionsInput>
   }
 
-  export type EnumPayment_MethodFieldUpdateOperationsInput = {
-    set?: $Enums.Payment_Method
+  export type EnumPaymentMethodFieldUpdateOperationsInput = {
+    set?: $Enums.PaymentMethod
   }
 
-  export type EnumPayment_StatusFieldUpdateOperationsInput = {
-    set?: $Enums.Payment_Status
+  export type EnumPaymentStatusFieldUpdateOperationsInput = {
+    set?: $Enums.PaymentStatus
   }
 
   export type MemberCreateNestedOneWithoutAttendancesInput = {
@@ -9771,6 +10027,11 @@ export namespace Prisma {
     in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -9820,6 +10081,14 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
     _max?: NestedEnumRoleFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -9897,38 +10166,38 @@ export namespace Prisma {
     _max?: NestedEnumStatusFilter<$PrismaModel>
   }
 
-  export type NestedEnumPayment_MethodFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Method | EnumPayment_MethodFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_MethodFilter<$PrismaModel> | $Enums.Payment_Method
+  export type NestedEnumPaymentMethodFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentMethodFilter<$PrismaModel> | $Enums.PaymentMethod
   }
 
-  export type NestedEnumPayment_StatusFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Status | EnumPayment_StatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_StatusFilter<$PrismaModel> | $Enums.Payment_Status
+  export type NestedEnumPaymentStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
   }
 
-  export type NestedEnumPayment_MethodWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Method | EnumPayment_MethodFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Method[] | ListEnumPayment_MethodFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_MethodWithAggregatesFilter<$PrismaModel> | $Enums.Payment_Method
+  export type NestedEnumPaymentMethodWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentMethod | EnumPaymentMethodFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentMethod[] | ListEnumPaymentMethodFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentMethodWithAggregatesFilter<$PrismaModel> | $Enums.PaymentMethod
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumPayment_MethodFilter<$PrismaModel>
-    _max?: NestedEnumPayment_MethodFilter<$PrismaModel>
+    _min?: NestedEnumPaymentMethodFilter<$PrismaModel>
+    _max?: NestedEnumPaymentMethodFilter<$PrismaModel>
   }
 
-  export type NestedEnumPayment_StatusWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Payment_Status | EnumPayment_StatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Payment_Status[] | ListEnumPayment_StatusFieldRefInput<$PrismaModel>
-    not?: NestedEnumPayment_StatusWithAggregatesFilter<$PrismaModel> | $Enums.Payment_Status
+  export type NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.PaymentStatus | EnumPaymentStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.PaymentStatus[] | ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.PaymentStatus
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumPayment_StatusFilter<$PrismaModel>
-    _max?: NestedEnumPayment_StatusFilter<$PrismaModel>
+    _min?: NestedEnumPaymentStatusFilter<$PrismaModel>
+    _max?: NestedEnumPaymentStatusFilter<$PrismaModel>
   }
 
   export type MemberCreateWithoutUserInput = {
@@ -9938,6 +10207,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionCreateNestedManyWithoutMemberInput
@@ -9951,6 +10221,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutMemberInput
@@ -9980,6 +10251,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUpdateManyWithoutMemberNestedInput
@@ -9993,6 +10265,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutMemberNestedInput
@@ -10005,6 +10278,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10015,6 +10289,7 @@ export namespace Prisma {
     password: string
     username: string
     role: $Enums.Role
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10029,9 +10304,10 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    plan: Membership_PlanCreateNestedOneWithoutSubscriptionsInput
+    plan: MembershipPlanCreateNestedOneWithoutSubscriptionsInput
   }
 
   export type SubscriptionUncheckedCreateWithoutMemberInput = {
@@ -10040,6 +10316,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10057,11 +10334,17 @@ export namespace Prisma {
   export type AttendanceCreateWithoutMemberInput = {
     id?: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AttendanceUncheckedCreateWithoutMemberInput = {
     id?: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AttendanceCreateOrConnectWithoutMemberInput = {
@@ -10091,6 +10374,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10101,6 +10385,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10131,6 +10416,7 @@ export namespace Prisma {
     start_date?: DateTimeFilter<"Subscription"> | Date | string
     end_date?: DateTimeFilter<"Subscription"> | Date | string
     status?: EnumStatusFilter<"Subscription"> | $Enums.Status
+    isDeleted?: BoolFilter<"Subscription"> | boolean
     createdAt?: DateTimeFilter<"Subscription"> | Date | string
     updatedAt?: DateTimeFilter<"Subscription"> | Date | string
   }
@@ -10158,6 +10444,9 @@ export namespace Prisma {
     id?: StringFilter<"Attendance"> | string
     member_id?: StringFilter<"Attendance"> | string
     check_in_time?: DateTimeFilter<"Attendance"> | Date | string
+    isDeleted?: BoolFilter<"Attendance"> | boolean
+    createdAt?: DateTimeFilter<"Attendance"> | Date | string
+    updatedAt?: DateTimeFilter<"Attendance"> | Date | string
   }
 
   export type SubscriptionCreateWithoutPlanInput = {
@@ -10165,6 +10454,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     member: MemberCreateNestedOneWithoutSubscriptionsInput
@@ -10176,6 +10466,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10213,6 +10504,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutMemberInput
@@ -10227,6 +10519,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     attendances?: AttendanceUncheckedCreateNestedManyWithoutMemberInput
@@ -10237,27 +10530,29 @@ export namespace Prisma {
     create: XOR<MemberCreateWithoutSubscriptionsInput, MemberUncheckedCreateWithoutSubscriptionsInput>
   }
 
-  export type Membership_PlanCreateWithoutSubscriptionsInput = {
+  export type MembershipPlanCreateWithoutSubscriptionsInput = {
     id?: string
     name: string
     duration_days: number
     price: number
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type Membership_PlanUncheckedCreateWithoutSubscriptionsInput = {
+  export type MembershipPlanUncheckedCreateWithoutSubscriptionsInput = {
     id?: string
     name: string
     duration_days: number
     price: number
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type Membership_PlanCreateOrConnectWithoutSubscriptionsInput = {
-    where: Membership_PlanWhereUniqueInput
-    create: XOR<Membership_PlanCreateWithoutSubscriptionsInput, Membership_PlanUncheckedCreateWithoutSubscriptionsInput>
+  export type MembershipPlanCreateOrConnectWithoutSubscriptionsInput = {
+    where: MembershipPlanWhereUniqueInput
+    create: XOR<MembershipPlanCreateWithoutSubscriptionsInput, MembershipPlanUncheckedCreateWithoutSubscriptionsInput>
   }
 
   export type MemberUpsertWithoutSubscriptionsInput = {
@@ -10278,6 +10573,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutMemberNestedInput
@@ -10292,36 +10588,39 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     attendances?: AttendanceUncheckedUpdateManyWithoutMemberNestedInput
   }
 
-  export type Membership_PlanUpsertWithoutSubscriptionsInput = {
-    update: XOR<Membership_PlanUpdateWithoutSubscriptionsInput, Membership_PlanUncheckedUpdateWithoutSubscriptionsInput>
-    create: XOR<Membership_PlanCreateWithoutSubscriptionsInput, Membership_PlanUncheckedCreateWithoutSubscriptionsInput>
-    where?: Membership_PlanWhereInput
+  export type MembershipPlanUpsertWithoutSubscriptionsInput = {
+    update: XOR<MembershipPlanUpdateWithoutSubscriptionsInput, MembershipPlanUncheckedUpdateWithoutSubscriptionsInput>
+    create: XOR<MembershipPlanCreateWithoutSubscriptionsInput, MembershipPlanUncheckedCreateWithoutSubscriptionsInput>
+    where?: MembershipPlanWhereInput
   }
 
-  export type Membership_PlanUpdateToOneWithWhereWithoutSubscriptionsInput = {
-    where?: Membership_PlanWhereInput
-    data: XOR<Membership_PlanUpdateWithoutSubscriptionsInput, Membership_PlanUncheckedUpdateWithoutSubscriptionsInput>
+  export type MembershipPlanUpdateToOneWithWhereWithoutSubscriptionsInput = {
+    where?: MembershipPlanWhereInput
+    data: XOR<MembershipPlanUpdateWithoutSubscriptionsInput, MembershipPlanUncheckedUpdateWithoutSubscriptionsInput>
   }
 
-  export type Membership_PlanUpdateWithoutSubscriptionsInput = {
+  export type MembershipPlanUpdateWithoutSubscriptionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type Membership_PlanUncheckedUpdateWithoutSubscriptionsInput = {
+  export type MembershipPlanUncheckedUpdateWithoutSubscriptionsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     duration_days?: IntFieldUpdateOperationsInput | number
     price?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10333,6 +10632,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutMemberInput
@@ -10347,6 +10647,7 @@ export namespace Prisma {
     address: string
     gender: $Enums.Gender
     join_date?: Date | string
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     subscriptions?: SubscriptionUncheckedCreateNestedManyWithoutMemberInput
@@ -10375,6 +10676,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutMemberNestedInput
@@ -10389,6 +10691,7 @@ export namespace Prisma {
     address?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
     join_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     subscriptions?: SubscriptionUncheckedUpdateManyWithoutMemberNestedInput
@@ -10400,6 +10703,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10407,6 +10711,9 @@ export namespace Prisma {
   export type AttendanceCreateManyMemberInput = {
     id?: string
     check_in_time?: Date | string
+    isDeleted?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type SubscriptionUpdateWithoutMemberInput = {
@@ -10414,9 +10721,10 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    plan?: Membership_PlanUpdateOneRequiredWithoutSubscriptionsNestedInput
+    plan?: MembershipPlanUpdateOneRequiredWithoutSubscriptionsNestedInput
   }
 
   export type SubscriptionUncheckedUpdateWithoutMemberInput = {
@@ -10425,6 +10733,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10435,6 +10744,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10442,16 +10752,25 @@ export namespace Prisma {
   export type AttendanceUpdateWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AttendanceUncheckedUpdateWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AttendanceUncheckedUpdateManyWithoutMemberInput = {
     id?: StringFieldUpdateOperationsInput | string
     check_in_time?: DateTimeFieldUpdateOperationsInput | Date | string
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SubscriptionCreateManyPlanInput = {
@@ -10460,6 +10779,7 @@ export namespace Prisma {
     start_date?: Date | string
     end_date: Date | string
     status: $Enums.Status
+    isDeleted?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10469,6 +10789,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     member?: MemberUpdateOneRequiredWithoutSubscriptionsNestedInput
@@ -10480,6 +10801,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10490,6 +10812,7 @@ export namespace Prisma {
     start_date?: DateTimeFieldUpdateOperationsInput | Date | string
     end_date?: DateTimeFieldUpdateOperationsInput | Date | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -19,6 +19,7 @@ model User {
   username String
   role     Role
 
+  isDeleted Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   member    Member?
@@ -40,6 +41,7 @@ model Member {
   gender       Gender
   join_date    DateTime @default(now())
 
+  isDeleted     Boolean        @default(false)
   user          User           @relation(fields: [user_id], references: [id])
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
@@ -54,12 +56,13 @@ enum Gender {
   FEMALE
 }
 
-model Membership_Plan {
+model MembershipPlan {
   id            String @id @default(uuid())
   name          String
   duration_days Int
   price         Int
 
+  isDeleted     Boolean        @default(false)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   subscriptions Subscription[]
@@ -75,10 +78,11 @@ model Subscription {
   end_date   DateTime
   status     Status
 
-  member    Member          @relation(fields: [member_id], references: [id])
-  plan      Membership_Plan @relation(fields: [plan_id], references: [id])
-  createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt
+  isDeleted Boolean        @default(false)
+  member    Member         @relation(fields: [member_id], references: [id])
+  plan      MembershipPlan @relation(fields: [plan_id], references: [id])
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
 
   @@map("subscriptions")
 }
@@ -90,28 +94,33 @@ enum Status {
 }
 
 model Payment {
-  id              String         @id @default(uuid())
+  id              String        @id @default(uuid())
   subscription_id String
   amount_paid     Int
-  payment_method  Payment_Method
-  payment_date    DateTime       @default(now())
-  status          Payment_Status
+  payment_method  PaymentMethod
+  payment_date    DateTime      @default(now())
+  status          PaymentStatus
 
+  isDeleted Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("payments")
 }
 
-enum Payment_Status {
+enum PaymentStatus {
   SUCCESS
   FAILED
+
+  @@map("Payment_Status")
 }
 
-enum Payment_Method {
+enum PaymentMethod {
   CASH
   TRANSFER
   QRIS
+
+  @@map("Payment_Method")
 }
 
 model Attendance {
@@ -119,6 +128,10 @@ model Attendance {
   member_id     String
   check_in_time DateTime @default(now())
   member        Member   @relation(fields: [member_id], references: [id])
+
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("attendances")
 }
