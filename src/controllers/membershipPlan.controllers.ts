@@ -1,5 +1,25 @@
 import { NextFunction, Request, Response } from 'express';
-import { createMembershipPlanService } from '../services/membership-plan/createPlan.service';
+import { createMembershipPlanService } from '../services/membership-plan/create-plan.service';
+import { getMembershipPlansService } from '../services/membership-plan/get-membership-plans.service';
+
+export const getMembershipPlansController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const query = {
+      search: (req.query.search as string) || "",
+      duration: parseInt(req.query.duration as string) || 0,
+      price: parseInt(req.query.price as string) || 0,
+    };
+
+    const result = await getMembershipPlansService(query);
+    res.status(200).send(result);
+  } catch (error) {
+    next(error);
+  }
+};
 
 export const createMembershipPlanController = async (
   req: Request,

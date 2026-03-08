@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { registerService } from '../services/auth/register.service';
 import { loginService } from '../services/auth/login.service';
-import { refreshTokenService } from '../services/auth/refreshToken.service';
+import { refreshTokenService } from '../services/auth/refresh-token.service';
 
 export const registerController = async (
   req: Request,

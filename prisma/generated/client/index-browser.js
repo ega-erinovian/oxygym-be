@@ -127,6 +127,7 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password',
   username: 'username',
   role: 'role',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -139,6 +140,7 @@ exports.Prisma.MemberScalarFieldEnum = {
   address: 'address',
   gender: 'gender',
   join_date: 'join_date',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -148,6 +150,7 @@ exports.Prisma.MembershipPlanScalarFieldEnum = {
   name: 'name',
   duration_days: 'duration_days',
   price: 'price',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -159,6 +162,7 @@ exports.Prisma.SubscriptionScalarFieldEnum = {
   start_date: 'start_date',
   end_date: 'end_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -170,6 +174,7 @@ exports.Prisma.PaymentScalarFieldEnum = {
   payment_method: 'payment_method',
   payment_date: 'payment_date',
   status: 'status',
+  isDeleted: 'isDeleted',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -177,7 +182,10 @@ exports.Prisma.PaymentScalarFieldEnum = {
 exports.Prisma.AttendanceScalarFieldEnum = {
   id: 'id',
   member_id: 'member_id',
-  check_in_time: 'check_in_time'
+  check_in_time: 'check_in_time',
+  isDeleted: 'isDeleted',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
