@@ -12,6 +12,10 @@ export const getMembershipPlansController = async (
 ) => {
   try {
     const query = {
+      take: parseInt(req.query.take as string) || 5,
+      page: parseInt(req.query.page as string) || 1,
+      sortBy: (req.query.sortBy as string) || 'name',
+      sortOrder: (req.query.sortOrder as string) || 'desc',
       search: (req.query.search as string) || '',
       duration: parseInt(req.query.duration as string) || 0,
       price: parseInt(req.query.price as string) || 0,
